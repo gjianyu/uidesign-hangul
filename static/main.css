@@ -74,10 +74,35 @@ body {
     margin-right: 15px;
 }
 
-/* LEARN LETTER */
+.module-link {
+    color: #111;
+}
+
+.module-link:hover {
+    text-decoration: none;
+    color: #F46036;
+}
+
+/* LEARN */
+
+.prev-next {
+    font-size: 0.8em;
+}
+
+.prev-next-button {
+    background-color: #fff;
+    color: #444;
+    font-weight: bold;
+}
+
+.prev-next-button:hover {
+    text-decoration: none;
+    background-color: #F46036;
+    color: #fff;
+}
 
 .learn-row {
-    margin: 100px 50px;
+    margin: 50px;
     background: linear-gradient(90deg, #549F93 50%, #fff 50%);;
     border-radius: 50px;
 }
@@ -108,7 +133,23 @@ body {
     margin-left: -80px;
 }
 
-#hangul-description {
+#hangul-audio {
+    width: 100px;
+    height: 100px;
+    background-color: #F46036;
+    color: #fff;
+    border: 5px solid #111;
+    border-radius: 50px;
+    box-shadow: 1px 1px 5px #444;
+    font-size: 2em;
+    padding: 10px 20px;
+    margin-top: 25px;
+    margin-left: -120px;
+}
+
+/* LEARN LETTER */
+
+#hangul-desc {
     font-size: 2em;
     font-weight: bold;
 }
@@ -131,7 +172,7 @@ body {
 
 /* LEARN SYLLABLE */
 
-.syllable-desc {
+#syllable-desc {
     padding: 25px 0;
 }
 
@@ -155,4 +196,33 @@ body {
     box-shadow: 3px 3px 5px #444;
     text-align: center;
     line-height: 1.3em;
+}
+
+/* QUIZ LETTER */
+
+#quiz-hangul {
+    width: 240px;
+    height: 240px;
+    font-size: 8em;
+    background-color: #fff;
+    border: 5px solid #111;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px #444;
+    text-align: center;
+    line-height: 1.3em;
+    margin: 80px 0;
+}
+
+/* QUIZ SYLLABLE */
+#quiz-audio {
+    width: 240px;
+    height: 240px;
+    background-color: #F46036;
+    color: #fff;
+    border: 5px solid #111;
+    border-radius: 120px;
+    box-shadow: 3px 3px 5px #444;
+    font-size: 7em;
+    padding-left: 20px;
+    margin: 80px 0;
 }

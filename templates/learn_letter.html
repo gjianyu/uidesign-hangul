@@ -1,32 +1,34 @@
-{% extends "layout.html" %}
+{% extends "learn.html" %}
 
-{% block header %}
-<script>
-  let id = {{id|tojson}}
-  console.log(id)
-</script>
-{% endblock %}
-
-{% block content %}
-<div class="row learn-row">
+{% block learn_content %}
     <div class="col-6 my-auto hangul-col d-flex justify-content-center">
         <img id="hangul-image" src="https://media.baamboozle.com/uploads/images/46319/1593520077_21173">
         <div id="hangul-character">
             ㅂ
         </div>
+        <div id="hangul-audio">
+            <i class="fas fa-volume-up"></i>
+        </div>
     </div>
     <div class="col-6 my-auto hangul-col">
-        <div id="hangul-description">
+        <div id="hangul-desc">
             "b" like "bed"
         </div>
         <br>
-        <form class="form-inline">
-                <label for="hangul-question">What english letter does ㅂ sound like?</label>
-            <div class="form-group">
-                <input type="password" class="form-control" id="hangul-question" placeholder="Answer...">
-                <button type="submit" class="btn btn-submit">Submit</button>
+        <form class="form">
+            <div class="form-row">
+                <div class="col">
+                    <label for="hangul-question">What english letter does <b>ㅂ</b> sound like?</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input type="password" class="form-control" id="hangul-question" placeholder="Answer...">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
             </div>
         </form>
     </div>
-</div>
 {% endblock %}

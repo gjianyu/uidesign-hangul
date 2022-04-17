@@ -21,10 +21,15 @@ def learn_syllable(id):
     global data
     return render_template('learn_syllable.html', id=id)
 
-@app.route('/quiz/<int:id>')
-def quiz(id):
+@app.route('/quiz/letter/<int:id>')
+def quiz_letter(id):
     global data
-    return render_template('quiz.html', id=id)
+    return render_template('quiz_letter.html', id=id)
+
+@app.route('/quiz/syllable/<int:id>')
+def quiz_syllable(id):
+    global data
+    return render_template('quiz_syllable.html', id=id)
 
 # RUN / DEBUG
 

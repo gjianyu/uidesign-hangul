@@ -1,22 +1,17 @@
-{% extends "layout.html" %}
+{% extends "learn.html" %}
 
-{% block header %}
-<script>
-    let id = {{id|tojson}}
-    console.log(id)
-</script>
-{% endblock %}
-
-{% block content %}
-<div class="row learn-row">
+{% block learn_content %}
     <div class="col-6 my-auto hangul-col d-flex justify-content-center">
         <img id="hangul-image" src="https://img.freepik.com/free-vector/rice-realistic-illustration_249011-171.jpg?w=360">
         <div id="hangul-character">
             밥
         </div>
+        <div id="hangul-audio">
+            <i class="fas fa-volume-up"></i>
+        </div>
     </div>
     <div class="col-6 my-auto hangul-col">
-        <div class="text-center syllable-desc">
+        <div id="syllable-desc" class="text-center">
             Drag the letters to the box to construct the syllable.
         </div>
         <div class="row">
@@ -55,5 +50,4 @@
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

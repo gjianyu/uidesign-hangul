@@ -2,8 +2,8 @@
 
 {% block header %}
 <script>
-  let id = {{id|tojson}}
-  console.log(id)
+    let id = {{id|tojson}}
+    console.log(id)
 </script>
 {% endblock %}
 
@@ -14,7 +14,7 @@
     <a class="p-3 prev-next-button" href="http://127.0.0.1:5000/">NEXT →</a>
 </div>
 <div class="row learn-row">
-    {% block quiz_content %}
+    {% block learn_content %}
     {% endblock %}
 </div>
 {% endblock %}

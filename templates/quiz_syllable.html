@@ -1,0 +1,49 @@
+{% extends "quiz.html" %}
+
+{% block quiz_content %}
+<div class="col-6 my-auto hangul-col d-flex justify-content-center">
+  <div id="quiz-audio">
+    <i class="fas fa-volume-up"></i>
+  </div>
+</div>
+<div class="col-6 my-auto hangul-col">
+  <div id="syllable-desc" class="text-center">
+    Drag the letters to the box to construct the syllable you hear when you click on the audio button.
+  </div>
+  <div class="row">
+    <div class="col-6 my-auto drag-col">
+      <div class="row">
+        <div class="col-4">
+          ㄱ
+        </div>
+        <div class="col-4">
+          ㄴ
+        </div>
+        <div class="col-4">
+          ㅂ
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          ㅅ
+        </div>
+        <div class="col-4">
+          ㅎ
+        </div>
+        <div class="col-4">
+          ㅏ
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-clear">CLEAR</button>
+        <button type="submit" class="btn btn-submit">SUBMIT</button>
+      </div>
+    </div>
+    <div class="col-6 my-auto d-flex justify-content-center">
+      <div id="drop-box">
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "quiz.html" %}
+
+{% block quiz_content %}
+<div class="col-6 my-auto hangul-col d-flex justify-content-center">
+  <div id="quiz-hangul">
+    ㅂ
+  </div>
+</div>
+<div class="col-6 my-auto hangul-col">
+  <form class="form">
+    <div class="form-row">
+      <div class="col">
+        <label for="hangul-question">How do you pronounce <b>ㅂ</b>?</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <input type="password" class="form-control" id="hangul-question" placeholder="Answer...">
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
