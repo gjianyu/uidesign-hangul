@@ -1,0 +1,64 @@
+body {
+    font-family: 'Roboto', sans serif;
+    font-size: 24px;
+
+}
+
+.navbar-custom {
+    background-color: #fff;
+    color: #111;
+}
+
+.navbar-brand {
+    font-family: 'Josefin Sans', sans serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #549F93!important;
+}
+
+.navbar-custom a {
+    color: #111;
+}
+
+.navbar-custom a:hover {
+    color: #F46036;
+}
+
+#welcome-container {
+    padding: 50px;
+    width: 100%;
+    background: linear-gradient(90deg, #549F93 50%, #fff 50%);
+    overflow: hidden;
+}
+
+#welcome-col-1 {
+    padding: 50px;
+    background-color: #549F93;
+    color: #fff;
+}
+
+#welcome-title {
+    font-size: 3em;
+    font-family: 'Josefin Sans', sans serif;
+    font-weight: bold;
+}
+
+#welcome-desc {
+    font-size: 1.5em;
+}
+
+.module-row {
+    padding: 50px;
+    font-size: 1.5em;
+}
+
+.module-number {
+    width: 1.5em;
+    height: 1.5em;
+    font-weight: bold;
+    background-color: #F46036;
+    color: #fff;
+    border-radius: 1.5em;
+    padding-left: 18px;
+    margin-right: 15px;
+}
