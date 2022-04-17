@@ -11,10 +11,15 @@ app = Flask(__name__)
 def welcome():
     return render_template('welcome.html')
 
-@app.route('/learn/<int:id>')
-def learn(id):
+@app.route('/learn/letter/<int:id>')
+def learn_letter(id):
     global data
-    return render_template('learn.html', id=id)
+    return render_template('learn_letter.html', id=id)
+
+@app.route('/learn/syllable/<int:id>')
+def learn_syllable(id):
+    global data
+    return render_template('learn_syllable.html', id=id)
 
 @app.route('/quiz/<int:id>')
 def quiz(id):

@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans serif;
     font-size: 24px;
-
+    background-color: #fafafa;
 }
 
 .navbar-custom {
@@ -24,17 +24,28 @@ body {
     color: #F46036;
 }
 
-#welcome-container {
+.container {
     padding: 50px;
-    width: 100%;
-    background: linear-gradient(90deg, #549F93 50%, #fff 50%);
+    width: 80%;
+    max-width: 1800px!important;
     overflow: hidden;
+}
+
+/* WELCOME */
+
+.welcome-row {
+    margin: 50px;
+    background: linear-gradient(90deg, #549F93 50%, #fff 50%);;
+    border-radius: 50px;
 }
 
 #welcome-col-1 {
     padding: 50px;
-    background-color: #549F93;
     color: #fff;
+}
+
+#welcome-col-2 {
+    padding: 50px;
 }
 
 #welcome-title {
@@ -44,7 +55,7 @@ body {
 }
 
 #welcome-desc {
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .module-row {
@@ -61,4 +72,87 @@ body {
     border-radius: 1.5em;
     padding-left: 18px;
     margin-right: 15px;
+}
+
+/* LEARN LETTER */
+
+.learn-row {
+    margin: 100px 50px;
+    background: linear-gradient(90deg, #549F93 50%, #fff 50%);;
+    border-radius: 50px;
+}
+
+.hangul-col {
+    padding: 50px;
+}
+
+#hangul-image {
+    width: 240px;
+    height: 240px;
+    border: 5px solid #111;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px #444;
+}
+
+#hangul-character {
+    width: 240px;
+    height: 240px;
+    font-size: 8em;
+    background-color: #fff;
+    border: 5px solid #111;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px #444;
+    text-align: center;
+    line-height: 1.3em;
+    margin-top: 160px;
+    margin-left: -80px;
+}
+
+#hangul-description {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.btn-submit {
+    background-color: #F46036;
+    color: #fff;
+    border: 1px solid #F46036;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    background-color: #fff;
+    color: #F46036;
+}
+
+.form-group {
+    padding: 10px 0;
+}
+
+/* LEARN SYLLABLE */
+
+.syllable-desc {
+    padding: 25px 0;
+}
+
+.drag-col {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0 50px;
+}
+
+.btn-clear {
+    border: 1px solid #111;
+}
+
+#drop-box {
+    width: 240px;
+    height: 240px;
+    font-size: 8em;
+    background-color: #fff;
+    border: 5px solid #111;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px #444;
+    text-align: center;
+    line-height: 1.3em;
 }

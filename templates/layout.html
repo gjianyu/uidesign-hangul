@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
     <!--- STYLESHEETS AND JS FILES --->
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 
     <!--- FONTS --->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 
     {% block header %}
     {% endblock %}
@@ -26,20 +24,20 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-custom">
-    <a class="navbar-brand" href="#">호랑이 Holang-i</a>
+    <a class="navbar-brand" href="http://127.0.0.1:5000/">호랑이 Holang-i</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="http://127.0.0.1:5000/">Home</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="learnDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Learn
                 </a>
                 <div class="dropdown-menu" aria-labelledby="learnDropdown">
-                    <a class="dropdown-item" href="#">Letters and Sounds</a>
-                    <a class="dropdown-item" href="#">Constructing Syllables</a>
-                    <a class="dropdown-item" href="#">Words and Meanings</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/">Letters and Sounds</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/">Constructing Syllables</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/">Words and Meanings</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -47,9 +45,9 @@
                     Quiz
                 </a>
                 <div class="dropdown-menu" aria-labelledby="quizDropdown">
-                    <a class="dropdown-item" href="#">Letters and Sounds</a>
-                    <a class="dropdown-item" href="#">Constructing Syllables</a>
-                    <a class="dropdown-item" href="#">Words and Meanings</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/">Letters and Sounds</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/">Constructing Syllables</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5000/">Words and Meanings</a>
                 </div>
             </li>
         </ul>

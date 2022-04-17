@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<script>
+    let id = {{id|tojson}}
+    console.log(id)
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="row learn-row">
+    <div class="col-6 my-auto hangul-col d-flex justify-content-center">
+        <img id="hangul-image" src="https://img.freepik.com/free-vector/rice-realistic-illustration_249011-171.jpg?w=360">
+        <div id="hangul-character">
+            밥
+        </div>
+    </div>
+    <div class="col-6 my-auto hangul-col">
+        <div class="text-center syllable-desc">
+            Drag the letters to the box to construct the syllable.
+        </div>
+        <div class="row">
+            <div class="col-6 my-auto drag-col">
+                <div class="row">
+                    <div class="col-4">
+                        ㄱ
+                    </div>
+                    <div class="col-4">
+                        ㄴ
+                    </div>
+                    <div class="col-4">
+                        ㅂ
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        ㅅ
+                    </div>
+                    <div class="col-4">
+                        ㅎ
+                    </div>
+                    <div class="col-4">
+                        ㅏ
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-clear">CLEAR</button>
+                    <button type="submit" class="btn btn-submit">SUBMIT</button>
+                </div>
+            </div>
+            <div class="col-6 my-auto d-flex justify-content-center">
+                <div id="drop-box">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
