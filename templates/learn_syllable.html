@@ -1,5 +1,9 @@
 {% extends "learn.html" %}
-
+<div class="d-flex justify-content-between prev-next">
+    <a class="p-3 prev-next-button" href="http://127.0.0.1:5000/">← PREVIOUS</a>
+    <div class="p-3">PROGRESS: <b>1</b>/5</div>
+    <a class="p-3 prev-next-button" href="http://127.0.0.1:5000/">NEXT →</a>
+</div>
 {% block learn_content %}
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'learn_syllable.js') }}"></script>
