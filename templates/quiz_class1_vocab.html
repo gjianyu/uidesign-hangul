@@ -1,0 +1,39 @@
+{% extends "quiz.html" %}
+
+{% block quiz_content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz_class1_vocab.js') }}"></script>
+
+<script>
+  let vocab = {{vocab|tojson}}
+</script>
+
+<div class="col-6 my-auto hangul-col d-flex justify-content-center">
+  <div id="quiz-audio" onclick="play()">
+    <i class="fas fa-volume-up"></i>
+  </div>
+</div>
+<div class="col-6 my-auto hangul-col">
+  <div id="check-work"></div>
+  <div id="vocab-desc" class="text-center">
+    Drag the letters to the box to construct the word you hear when you click on the audio button.
+  </div>
+  <div class="row">
+    <div class="col-6 my-auto drag-col">
+      <div id="first_row_of_drag_table" class="row">
+      </div>
+      <div id="second_row_of_drag_table" class="row">
+      </div>
+      <div class="text-center">
+        <button id="clear_button" type="button" class="btn btn-clear">CLEAR</button>
+        <button id="submit_button" type="submit" class="btn btn-submit">SUBMIT</button>
+    </div>
+    </div>
+    <div class="col-6 my-auto d-flex justify-content-center">
+      <div id="drop-box">
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
