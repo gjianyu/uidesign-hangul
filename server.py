@@ -257,25 +257,9 @@ def learn_syllable(id):
 
 @app.route('/quiz/syllable/<int:id>')
 def quiz_syllable(id):
-    global data
-    return render_template('quiz_syllable.html', id=id)
-
-# AJAX FUNCTIONS
-@app.route('/learn/syllable/hangul_audios/<audio>', methods=['GET'])
-def audio_handler():
-    print()
-    print("!")
-    print()
-
-    global alphabet
     global syllables
-    global vocabulary
-
-    json_data = request.get_json()
-    audio = json_data
-
-    playsound.playsound(audio)
-    return jsonify(audio)
+    syllable = syllables[id-1]
+    return render_template('quiz_syllable.html', syllable=syllable)
 
 # RUN / DEBUG
 
