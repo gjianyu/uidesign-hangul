@@ -1,4 +1,4 @@
-import playsound
+import random
 from email.mime import audio
 from flask import Flask
 from flask import render_template
@@ -7,6 +7,7 @@ from flask import redirect
 app = Flask(__name__)
 
 # DATA
+quizzed = []
 alphabet = [
     {
         "id": 1,
@@ -81,6 +82,7 @@ syllables = [
         "hangul": "가",
         "pronunciation": "gah",
         "definition": "to go",
+        "image": "",
         "audio_id": 7,
         "audio": "hangul_audios/7_gah.mp3"
     },
@@ -89,6 +91,7 @@ syllables = [
         "hangul": "간",
         "pronunciation": "gan",
         "definition": "liver",
+        "image": "",
         "audio_id": 8,
         "audio": "hangul_audios/8_gan.mp3"
     },
@@ -97,6 +100,7 @@ syllables = [
         "hangul": "나",
         "pronunciation": "nah",
         "definition": "me",
+        "image": "",
         "audio_id": 9,
         "audio": "hangul_audios/9_nah.mp3"
     },
@@ -105,6 +109,7 @@ syllables = [
         "hangul": "난",
         "pronunciation": "nan",
         "definition": "I am... (in shortened form)",
+        "image": "",
         "audio_id": 10,
         "audio": "hangul_audios/10_nan.mp3"
     },
@@ -113,6 +118,7 @@ syllables = [
         "hangul": "바",
         "pronunciation": "bah",
         "definition": "NO_MEANING",
+        "image": "",
         "audio_id": 11,
         "audio": "hangul_audios/11_bah.mp3"
     },
@@ -121,6 +127,7 @@ syllables = [
         "hangul": "밥",
         "pronunciation": "bab",
         "definition": "rice, or food",
+        "image": "",
         "audio_id": 12,
         "audio": "hangul_audios/12_bab.mp3"
     },
@@ -129,6 +136,7 @@ syllables = [
         "hangul": "반",
         "pronunciation": "ban",
         "definition": "class, or half",
+        "image": "",
         "audio_id": 13,
         "audio": "hangul_audios/13_ban.mp3"
     },
@@ -137,6 +145,7 @@ syllables = [
         "hangul": "사",
         "pronunciation": "sah",
         "definition": "to buy",
+        "image": "",
         "audio_id": 14,
         "audio": "hangul_audios/14_sah.mp3"
     },
@@ -145,6 +154,7 @@ syllables = [
         "hangul": "산",
         "pronunciation": "san",
         "definition": "mountain",
+        "image": "",
         "audio_id": 15,
         "audio": "hangul_audios/15_san.mp3"
     },
@@ -153,6 +163,7 @@ syllables = [
         "hangul": "삽",
         "pronunciation": "sap",
         "definition": "shovel",
+        "image": "",
         "audio_id": 16,
         "audio": "hangul_audios/16_sap.mp3"
     },
@@ -161,6 +172,7 @@ syllables = [
         "hangul": "하",
         "pronunciation": "ha",
         "definition": "NO_MEANING",
+        "image": "",
         "audio_id": 17,
         "audio": "hangul_audios/17_ha.mp3"
     },
@@ -169,6 +181,7 @@ syllables = [
         "hangul": "한",
         "pronunciation": "han",
         "definition": "an internalized feeling of anger, sorrow and resentment stemming from centuries of oppression and suffering, in a way that is uniquely Korean",
+        "image": "",
         "audio_id": 18,
         "audio": "hangul_audios/18_han.mp3"
     }
@@ -250,20 +263,15 @@ def learn_letter(id):
     global data
     return render_template('learn_letter.html', id=id)
 
-@app.route('/learn/syllable/<int:id>')
-def learn_syllable(id):
+@app.route('/quiz/class1/letter/<int:id>')
+def quiz_class1_letter(id):
     global data
-    return render_template('learn_syllable.html', id=id) 
+    return render_template('quiz_class1_letter.html', id=id)
 
-@app.route('/quiz/phase1/letter/<int:id>')
-def quiz_phase1_letter(id):
+@app.route('/quiz/class2/letter/<int:id>')
+def quiz_class2_letter(id):
     global data
-    return render_template('quiz_phase1_letter.html', id=id)
-
-@app.route('/quiz/phase2/letter/<int:id>')
-def quiz_phase2_letter(id):
-    global data
-    return render_template('quiz_phase2_letter.html', id=id)
+    return render_template('quiz_class2_letter.html', id=id)
 
 @app.route('/learn/syllable/<int:id>')
 def learn_syllable(id):
@@ -271,11 +279,18 @@ def learn_syllable(id):
     syllable = syllables[id-1]
     return render_template('learn_syllable.html', syllable=syllable)
 
-@app.route('/quiz/syllable/<int:id>')
-def quiz_syllable(id):
+@app.route('/quiz/syllable')
+def quiz_syllable():
     global syllables
-    syllable = syllables[id-1]
-    return render_template('quiz_syllable.html', syllable=syllable)
+    global quizzed
+    if len(quizzed) == len(syllables):
+        quizzed = []
+    rand_syll = random.choice(syllables)
+    while rand_syll["id"] in quizzed:
+        rand_syll = random.choice(syllables)
+    quizzed.append(rand_syll["id"])
+    print("\n", quizzed)
+    return render_template('quiz_syllable.html', syllable=rand_syll)
 
 @app.route('/find_letter', methods=['GET', 'POST'])
 def find_letter():
@@ -286,7 +301,7 @@ def find_letter():
     for x in alphabet:
         if info ==x["id"]:
             stats = x
-    #send back the WHOLE array of data, so the client can redisplay it
+    # send back the WHOLE array of data, so the client can redisplay it
     return jsonify(stats = stats)
 
 @app.route('/all_letters', methods=['GET', 'POST'])
@@ -295,7 +310,7 @@ def all_letters():
     json_data = request.get_json()
     info = json_data
     stats = alphabet
-    #send back the WHOLE array of data, so the client can redisplay it
+    # send back the WHOLE array of data, so the client can redisplay it
     return jsonify(stats = stats)
 
 
