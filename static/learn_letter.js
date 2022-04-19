@@ -36,7 +36,7 @@ function show_info(info){
 
     if(stats["end"]=="1"){
         $("#change-state").append("<a class = 'p-3 prev next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 prev next-button' href = '../../quiz/letter/1'>NEXT →</a></div>")
+        $("#change-state").append("<a class = 'p-3 prev next-button' href = '../../quiz/class1/letter/1'>NEXT →</a></div>")
     }
     else if(prev_id == 0){
         $("#change-state").append("<a class = 'p-3 prev next-button' href='#'>← PREVIOUS</a>")

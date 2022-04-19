@@ -2,24 +2,29 @@
 
 {% block quiz_content %}
 <head>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_phase1_letter.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_class1_letter.js') }}"></script>
     <script>
         $(document).ready(function() {
             let id = {{id|tojson}}
             let info = display_info(id)
+
+            let getId = get_id(id)
             console.log(id)
         })
 
     </script>
 </head>
 <div class="col-6 my-auto hangul-col d-flex justify-content-center">
-  <div id="quiz-audio">
-  </div>
+    <div id="quiz-audio" onclick="play()">
+        <i class="fas fa-volume-up"></i>
+    </div>
 </div>
 <div class="col-6 my-auto hangul-col">
     <div id = "input-feedback">
     </div>
     <div id = "options">
+    </div>
+    <div id = "change-state">
     </div>
 </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 $(document).ready(function() {
+    console.log("Test.")
 })
 function display_info(info){
-    $("#quiz-audio").empty()
     $("#hangul-question").empty()
     $("#input-feedback").empty()
     console.log(info)
@@ -17,10 +17,38 @@ function show_info(info){
 
         $(".btn-secondary").click(function() {
             $("#input-feedback").empty()
-            if()
             $("#input-feedback").append("Correct!")
         });
     })
+}
+function get_id(getId){
+    let info = getId
+    find_letter(info)
+}
+function show_letter(info){
+    $("#change-state").append("<div class = 'd-flex justify-content-between prev-next'>")
+
+    let prev_id = stats["id"] - 1
+    console.log(stats["id"])
+    let curr_id = stats["id"]
+    let next_id = stats["id"] + 1
+
+    if(stats["end"]=="1"){
+        $("#change-state").append("<a class = 'p-3 prev next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
+        $("#change-state").append("<a class = 'p-3 prev next-button' href = '../../class2/letter/1'>NEXT →</a></div>")
+    }
+    else if(prev_id == 0){
+        $("#change-state").append("<a class = 'p-3 prev next-button' href='#'>← PREVIOUS</a>")
+        $("#change-state").append("<a class = 'p-3 prev next-button' href = '" + next_id+"'>NEXT →</a></div>")
+    }
+    else{
+        $("#change-state").append("<a class = 'p-3 prev next-button' href='"+prev_id +"'>← PREVIOUS</a>")
+        $("#change-state").append("<a class = 'p-3 prev next-button' href = '"+ next_id+"'>NEXT →</a></div>")
+    }
+
+    // HAVE TO DO: Check if selected button is same as audio
+}
+function play(x) {
 }
 function find_letter(info){
     $.ajax({
@@ -32,7 +60,7 @@ function find_letter(info){
         success: function(result){
             let all_data = result["stats"]
             stats = all_data
-            show_info(stats)
+            show_letter(stats)
         },
         error: function(request, status, error){
             console.log("Error");
