@@ -7,7 +7,8 @@ from flask import redirect
 app = Flask(__name__)
 
 # DATA
-quizzed = []
+syllable_quizzed = []
+vocab_quizzed = []
 alphabet = [
     {
         "id": 1,
@@ -240,16 +241,6 @@ vocabulary = [
         "image": "",
         "audio_id": 15,
         "audio": "hangul_audios/14_san.mp3"
-    },
-    {
-        "id": 7,
-        "hangul": "하하하",
-        "pronunciation": "hahaha",
-        "english_word": "",
-        "definition": "the sound of laughter (onomatopoeia)",
-        "image": "",
-        "audio_id": 21,
-        "audio": "hangul_audios/21_hahaha.mp3"
     }
 ]
 
@@ -282,15 +273,45 @@ def learn_syllable(id):
 @app.route('/quiz/syllable')
 def quiz_syllable():
     global syllables
-    global quizzed
-    if len(quizzed) == len(syllables):
-        quizzed = []
+    global syllable_quizzed
+    if len(syllable_quizzed) == len(syllables):
+        syllable_quizzed = []
     rand_syll = random.choice(syllables)
-    while rand_syll["id"] in quizzed:
+    while rand_syll["id"] in syllable_quizzed:
         rand_syll = random.choice(syllables)
-    quizzed.append(rand_syll["id"])
-    print("\n", quizzed)
+    syllable_quizzed.append(rand_syll["id"])
+    print("\n", syllable_quizzed)
     return render_template('quiz_syllable.html', syllable=rand_syll)
+
+@app.route('/learn/vocab/<int:id>')
+def learn_vocab(id):
+    return render_template('learn_vocab.html', id=id)
+
+@app.route('/quiz/class1/vocab')
+def quiz_class1_vocab():
+    global vocabulary
+    global vocab_quizzed
+    if len(vocab_quizzed) == len(vocabulary):
+        vocab_quizzed = []
+    rand_vocab = random.choice(vocabulary)
+    while rand_vocab["id"] in vocab_quizzed:
+        rand_vocab = random.choice(vocabulary)
+    vocab_quizzed.append(rand_vocab["id"])
+    print("\n", vocab_quizzed)
+    return render_template('quiz_class1_vocab.html', vocab=rand_vocab)
+
+@app.route('/quiz/class2/vocab')
+def quiz_class2_vocab():
+    global vocabulary
+    global vocab_quizzed
+    if len(vocab_quizzed) == len(vocabulary):
+        vocab_quizzed = []
+    rand_vocab = random.choice(vocabulary)
+    while rand_vocab["id"] in vocab_quizzed:
+        rand_vocab = random.choice(vocabulary)
+    vocab_quizzed.append(rand_vocab["id"])
+    print("\n", vocab_quizzed)
+    return render_template('quiz_class2_vocab.html', vocab=rand_vocab)
 
 @app.route('/find_letter', methods=['GET', 'POST'])
 def find_letter():

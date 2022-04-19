@@ -8,31 +8,19 @@ let letters = [
     "ㅏ"
 ]
 
-function play(x) {
-    let audio_path = "http://127.0.0.1:8080/"
-    switch(x) {
-        case "ㄱ":
-            audio_path += "hangul_audios/1_g.mp3"
-            break;
-        case "ㄴ":
-            audio_path += "hangul_audios/2_n.mp3"
-            break;
-        case "ㅂ":
-            audio_path += "hangul_audios/3_b.mp3"
-            break;
-        case "ㅅ":
-            audio_path += "hangul_audios/4_s.mp3"
-            break;
-        case "ㅎ":
-            audio_path += "hangul_audios/5_h.mp3"
-            break;
-        case "ㅏ":
-            audio_path += "hangul_audios/6_ah.mp3"
-            break;
-        default:
-            audio_path += syllable.audio
-            break;
+function check_overspill() {
+    word = vocab.hangul
+    if (word.length > 1) {
+        let hangul_vocab = document.getElementById("hangul-character")
+        hangul_vocab.style.fontSize = "4em"
+        let dropbox = document.getElementById("drop-box")
+        dropbox.style.fontSize = "2em"
     }
+}
+
+function play() {
+    let audio_path = "http://127.0.0.1:8080/"
+    audio_path += vocab.audio
     console.log(audio_path)
     let audio = new Audio(audio_path)
     audio.play()
@@ -51,6 +39,7 @@ function clear() {
     $("#clear_button").click(function() {
         dropbox_text = ""
         $("#drop-box").html(dropbox_text)
+        $("#check-work").empty()
     })
 }
 
@@ -84,9 +73,6 @@ function draggableTablePopulate(){
         let new_letter = $("<div>")
         $(new_letter).html(value).addClass("col-4")
         $(new_letter).attr("data", value)
-        $(new_letter).on("click", function() {
-            play(value)
-        })
         // how to make dragged letter go in front of box?
         // $(new_letter).position("relative")
         // $(new_letter).zIndex(1)
