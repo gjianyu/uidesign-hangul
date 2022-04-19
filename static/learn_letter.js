@@ -5,15 +5,25 @@ function display_info(info){
     $("#hangul-character").empty()
     $("#hangul-image").empty()
     $("#hangul-desc").empty()
-    $("#hangul-audio").empty()
     $("#input-feedback").empty()
     console.log(info)
     find_letter(info)
 }
+
+function play() {
+    let audio_path = "http://127.0.0.1:8080/"
+    audio_path += stats["audio"]
+    console.log(audio_path)
+    let audio = new Audio(audio_path)
+    audio.play()
+}
+
 function show_info(info){
     $("#hangul-character").append(stats["hangul"])
     $("#image").append("<img src ='"+ stats["image"]+"' width = '200'></img>")
-    $("#hangul-audio").append(stats["audio"])
+    $("#hangul-audio").on("click", function() {
+        play()
+    })
     $("#hangul-desc").append("<p>" + stats["pronunciation"] + " like '" + stats["english_word"] + "'</p>")
     $(".question").append("<label for='hangul-question'>What english letter does <b>"+stats["hangul"]+"</b> sound like?</label>")
 

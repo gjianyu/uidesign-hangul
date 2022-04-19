@@ -1,3 +1,5 @@
+let curr = ""
+
 $(document).ready(function() {
     console.log("Test.")
 })
@@ -7,17 +9,42 @@ function display_info(info){
     console.log(info)
     all_letters(info)
 }
+
+function play() {
+    console.log(stats)
+    let audio_path = "http://127.0.0.1:8080/"
+    audio_path += letter.audio
+    console.log(audio_path)
+    let audio = new Audio(audio_path)
+    audio.play()
+    curr = letter.hangul
+    // console.log(letter.hangul)
+}
+
 function show_info(info){
     $.each(stats, function(i, letter){
         let row = $("<div class = 'row'>")
         $("#options").append(row)
         let col_options = $("<div class = 'col-md-12'>")
-        $(col_options).append("<button type='button' class='btn btn-secondary' id= '"+ i + "'>"+letter["hangul"]+"</button>")
+        $(col_options).append("<button type='button' class='btn btn-secondary' id= '"+ i + "' value= '" + letter["hangul"] + "'>"+letter["hangul"]+"</button>")
+
+        // $(col_options).append("<button type='button' class='btn btn-secondary' id= '"+ i + "'>"+letter["hangul"]+"</button>")
         $(row).append(col_options)
 
-        $(".btn-secondary").click(function() {
-            $("#input-feedback").empty()
-            $("#input-feedback").append("Correct!")
+        $(".btn-secondary").click(function(e) {
+            let clicked = e.target
+            console.log(clicked.value)
+
+            if (curr == clicked.value) {
+                $("#input-feedback").empty()
+                $("#input-feedback").append("Correct!")
+            }
+            else {
+
+                $("#input-feedback").empty()
+                $("#input-feedback").append("Incorrect!")
+            }
+
         });
     })
 }
@@ -47,8 +74,6 @@ function show_letter(info){
     }
 
     // HAVE TO DO: Check if selected button is same as audio
-}
-function play(x) {
 }
 function find_letter(info){
     $.ajax({
