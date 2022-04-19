@@ -1,12 +1,20 @@
 {% extends "learn.html" %}
 
 {% block learn_content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn_syllable.js') }}"></script>
+
+<script>
+    let syllable = {{syllable|tojson}}
+</script>
+
+<body>
     <div class="col-6 my-auto hangul-col d-flex justify-content-center">
-        <img id="hangul-image" src="https://img.freepik.com/free-vector/rice-realistic-illustration_249011-171.jpg?w=360">
+        <img id="hangul-image" id="syllable-image" src="{{syllable.image}}" alt="{{syllable.definition}}">
         <div id="hangul-character">
-            밥
+            {{syllable.hangul}}
         </div>
-        <div id="hangul-audio">
+        <div id="hangul-audio" onclick="play()">
             <i class="fas fa-volume-up"></i>
         </div>
     </div>
@@ -17,24 +25,24 @@
         <div class="row">
             <div class="col-6 my-auto drag-col">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4" onclick="play('ㄱ')">
                         ㄱ
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" onclick="play('ㄴ')">
                         ㄴ
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" onclick="play('ㅂ')">
                         ㅂ
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4" onclick="play('ㅅ')">
                         ㅅ
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" onclick="play('ㅎ')">
                         ㅎ
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" onclick="play('ㅏ')">
                         ㅏ
                     </div>
                 </div>
@@ -50,4 +58,6 @@
             </div>
         </div>
     </div>
+</body>
+
 {% endblock %}

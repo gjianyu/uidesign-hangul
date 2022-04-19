@@ -1,3 +1,5 @@
+import playsound
+from email.mime import audio
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
@@ -14,7 +16,7 @@ alphabet = [
         "english_word": "gun",
         "image": "",
         "audio_id": 1,
-        "audio": ""
+        "audio": "hangul_audios/1_g.mp3"
     },
     {
         "id": 2,
@@ -24,7 +26,7 @@ alphabet = [
         "english_word": "nose",
         "image": "",
         "audio_id": 2,
-        "audio": ""
+        "audio": "hangul_audios/2_n.mp3"
     },
     {
         "id": 3,
@@ -34,7 +36,7 @@ alphabet = [
         "english_word": "bed",
         "image": "",
         "audio_id": 3,
-        "audio": ""
+        "audio": "hangul_audios/3_b.mp3"
     },
     {
         "id": 4,
@@ -44,7 +46,7 @@ alphabet = [
         "english_word": "slide",
         "image": "",
         "audio_id": 4,
-        "audio": ""
+        "audio": "hangul_audios/4_s.mp3"
     },
     {
         "id": 5,
@@ -54,7 +56,7 @@ alphabet = [
         "english_word": "hat",
         "image": "",
         "audio_id": 5,
-        "audio": ""
+        "audio": "hangul_audios/5_h.mp3"
     },
     {
         "id": 6,
@@ -64,7 +66,7 @@ alphabet = [
         "english_word": "diploma",
         "image": "",
         "audio_id": 6,
-        "audio": ""
+        "audio": "hangul_audios/6_ah.mp3"
     },
 ]
 syllables = [
@@ -74,7 +76,7 @@ syllables = [
         "pronunciation": "gah",
         "definition": "to go",
         "audio_id": 7,
-        "audio": ""
+        "audio": "hangul_audios/7_gah.mp3"
     },
     {
         "id": 2,
@@ -82,7 +84,7 @@ syllables = [
         "pronunciation": "gan",
         "definition": "liver",
         "audio_id": 8,
-        "audio": ""
+        "audio": "hangul_audios/8_gan.mp3"
     },
     {
         "id": 3,
@@ -90,7 +92,7 @@ syllables = [
         "pronunciation": "nah",
         "definition": "me",
         "audio_id": 9,
-        "audio": ""
+        "audio": "hangul_audios/9_nah.mp3"
     },
     {
         "id": 4,
@@ -98,7 +100,7 @@ syllables = [
         "pronunciation": "nan",
         "definition": "I am... (in shortened form)",
         "audio_id": 10,
-        "audio": ""
+        "audio": "hangul_audios/10_nan.mp3"
     },
     {
         "id": 5,
@@ -106,7 +108,7 @@ syllables = [
         "pronunciation": "bah",
         "definition": "NO_MEANING",
         "audio_id": 11,
-        "audio": ""
+        "audio": "hangul_audios/11_bah.mp3"
     },
     {
         "id": 6,
@@ -114,7 +116,7 @@ syllables = [
         "pronunciation": "bab",
         "definition": "rice, or food",
         "audio_id": 12,
-        "audio": ""
+        "audio": "hangul_audios/12_bab.mp3"
     },
     {
         "id": 7,
@@ -122,7 +124,7 @@ syllables = [
         "pronunciation": "ban",
         "definition": "class, or half",
         "audio_id": 13,
-        "audio": ""
+        "audio": "hangul_audios/13_ban.mp3"
     },
     {
         "id": 8,
@@ -130,7 +132,7 @@ syllables = [
         "pronunciation": "sah",
         "definition": "to buy",
         "audio_id": 14,
-        "audio": ""
+        "audio": "hangul_audios/14_sah.mp3"
     },
     {
         "id": 9,
@@ -138,7 +140,7 @@ syllables = [
         "pronunciation": "san",
         "definition": "mountain",
         "audio_id": 15,
-        "audio": ""
+        "audio": "hangul_audios/15_san.mp3"
     },
     {
         "id": 10,
@@ -146,7 +148,7 @@ syllables = [
         "pronunciation": "sap",
         "definition": "shovel",
         "audio_id": 16,
-        "audio": ""
+        "audio": "hangul_audios/16_sap.mp3"
     },
     {
         "id": 11,
@@ -154,7 +156,7 @@ syllables = [
         "pronunciation": "ha",
         "definition": "NO_MEANING",
         "audio_id": 17,
-        "audio": ""
+        "audio": "hangul_audios/17_ha.mp3"
     },
     {
         "id": 12,
@@ -162,7 +164,7 @@ syllables = [
         "pronunciation": "han",
         "definition": "an internalized feeling of anger, sorrow and resentment stemming from centuries of oppression and suffering, in a way that is uniquely Korean",
         "audio_id": 18,
-        "audio": ""
+        "audio": "hangul_audios/18_han.mp3"
     }
 ]
 vocabulary = [
@@ -173,7 +175,7 @@ vocabulary = [
         "definition": "to go",
         "image": "",
         "audio_id": 7,
-        "audio": ""
+        "audio": "hangul_audios/7_gah.mp3"
     },
     {
         "id": 2,
@@ -182,7 +184,7 @@ vocabulary = [
         "definition": "liver",
         "image": "",
         "audio_id": 8,
-        "audio": ""
+        "audio": "hangul_audios/8_gan.mp3"
     },
     {
         "id": 3,
@@ -191,7 +193,7 @@ vocabulary = [
         "definition": "me",
         "image": "",
         "audio_id": 9,
-        "audio": ""
+        "audio": "hangul_audios/9_nah.mp3"
     },
     {
         "id": 4,
@@ -200,7 +202,7 @@ vocabulary = [
         "definition": "banana",
         "image": "",
         "audio_id": 19,
-        "audio": ""
+        "audio": "hangul_audios/19_banana.mp3"
     },
     {
         "id": 5,
@@ -209,7 +211,7 @@ vocabulary = [
         "definition": "professor",
         "image": "",
         "audio_id": 20,
-        "audio": ""
+        "audio": "hangul_audios/20_baksa.mp3"
     },
     {
         "id": 6,
@@ -218,7 +220,7 @@ vocabulary = [
         "definition": "mountain",
         "image": "",
         "audio_id": 15,
-        "audio": ""
+        "audio": "hangul_audios/14_san.mp3"
     },
     {
         "id": 7,
@@ -228,7 +230,7 @@ vocabulary = [
         "definition": "the sound of laughter (onomatopoeia)",
         "image": "",
         "audio_id": 21,
-        "audio": ""
+        "audio": "hangul_audios/21_hahaha.mp3"
     }
 ]
 
@@ -242,20 +244,38 @@ def learn_letter(id):
     global data
     return render_template('learn_letter.html', id=id)
 
-@app.route('/learn/syllable/<int:id>')
-def learn_syllable(id):
-    global data
-    return render_template('learn_syllable.html', id=id)
-
 @app.route('/quiz/letter/<int:id>')
 def quiz_letter(id):
     global data
     return render_template('quiz_letter.html', id=id)
 
+@app.route('/learn/syllable/<int:id>')
+def learn_syllable(id):
+    global syllables
+    syllable = syllables[id-1]
+    return render_template('learn_syllable.html', syllable=syllable)
+
 @app.route('/quiz/syllable/<int:id>')
 def quiz_syllable(id):
     global data
     return render_template('quiz_syllable.html', id=id)
+
+# AJAX FUNCTIONS
+@app.route('/learn/syllable/hangul_audios/<audio>', methods=['GET'])
+def audio_handler():
+    print()
+    print("!")
+    print()
+
+    global alphabet
+    global syllables
+    global vocabulary
+
+    json_data = request.get_json()
+    audio = json_data
+
+    playsound.playsound(audio)
+    return jsonify(audio)
 
 # RUN / DEBUG
 
