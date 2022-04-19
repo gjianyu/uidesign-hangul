@@ -1,34 +1,45 @@
 {% extends "learn.html" %}
-
 {% block learn_content %}
+<head>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'learn_letter.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            let id = {{id|tojson}}
+            let info = display_info(id)
+            console.log(id)
+        })
+
+    </script>
+</head>
+<body>
     <div class="col-6 my-auto hangul-col d-flex justify-content-center">
-        <img id="hangul-image" src="https://media.baamboozle.com/uploads/images/46319/1593520077_21173">
+        <div id = "image">
+        </div>
         <div id="hangul-character">
-            ㅂ
         </div>
         <div id="hangul-audio">
             <i class="fas fa-volume-up"></i>
         </div>
     </div>
     <div class="col-6 my-auto hangul-col">
+        <div id = "input-feedback">
+        </div>
         <div id="hangul-desc">
-            "b" like "bed"
         </div>
         <br>
-        <form class="form">
+        <form id="form">
             <div class="form-row">
-                <div class="col">
-                    <label for="hangul-question">What english letter does <b>ㅂ</b> sound like?</label>
-                </div>
+                <div class = "col question">
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input type="password" class="form-control" id="hangul-question" placeholder="Answer...">
+                    <input  class="form-control" id="hangul-question" placeholder="Answer...">
                 </div>
-                <div class="col">
-                    <button type="submit" class="btn btn-submit">Submit</button>
-                </div>
+                <input type="submit" class="btn btn-submit"></input>
             </div>
         </form>
+        <div id = "change-state">
+        </div>
     </div>
+</body>
 {% endblock %}

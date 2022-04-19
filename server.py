@@ -8,61 +8,67 @@ app = Flask(__name__)
 alphabet = [
     {
         "id": 1,
+        "end": "0",
         "hangul": "ㄱ",
         "letter_details": "consonant",
         "pronunciation": "g",
         "english_word": "gun",
-        "image": "",
+        "image": "https://www.clipartkey.com/mpngs/m/7-73298_cartoon-gun-clipart-transparent-background-gun-clipart.png",
         "audio_id": 1,
         "audio": ""
     },
     {
         "id": 2,
+        "end" : "0",
         "hangul": "ㄴ",
         "letter_details": "consonant",
         "pronunciation": "n",
         "english_word": "nose",
-        "image": "",
+        "image": "https://us.123rf.com/450wm/dvarg/dvarg1604/dvarg160400025/54978463-nose-icon-in-flat-design-on-white-background.jpg?ver=6",
         "audio_id": 2,
         "audio": ""
     },
     {
         "id": 3,
+        "end" : "0",
         "hangul": "ㅂ",
         "letter_details": "consonant",
         "pronunciation": "b",
         "english_word": "bed",
-        "image": "",
+        "image": "data:image/png;base64,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",
         "audio_id": 3,
         "audio": ""
     },
     {
         "id": 4,
+        "end" : "0",
         "hangul": "ㅅ",
         "letter_details": "consonant",
         "pronunciation": "s",
         "english_word": "slide",
-        "image": "",
+        "image": "https://media.istockphoto.com/vectors/kids-slide-cartoon-vector-id1137328096?k=20&m=1137328096&s=170667a&w=0&h=QuEnOIjnb3xCQWDl-GmX6bVbu81PuLmF97IVikOGCAU=",
         "audio_id": 4,
         "audio": ""
     },
     {
         "id": 5,
+        "end" : "0",
         "hangul": "ㅎ",
         "letter_details": "consonant",
         "pronunciation": "h",
         "english_word": "hat",
-        "image": "",
+        "image": "https://cdna.artstation.com/p/marketplace/presentation_assets/000/215/134/large/file.jpg?1570541876",
         "audio_id": 5,
         "audio": ""
     },
     {
         "id": 6,
+        "end" : "1",
         "hangul": "ㅏ",
         "letter_details": "consonant",
         "pronunciation": "ah",
         "english_word": "diploma",
-        "image": "",
+        "image": "https://www.pngitem.com/pimgs/m/116-1165792_diploma-clipart-transparent-cartoons-graduation-certificate-png-png.png",
         "audio_id": 6,
         "audio": ""
     },
@@ -247,15 +253,42 @@ def learn_syllable(id):
     global data
     return render_template('learn_syllable.html', id=id)
 
-@app.route('/quiz/letter/<int:id>')
-def quiz_letter(id):
+@app.route('/quiz/phase1/letter/<int:id>')
+def quiz_phase1_letter(id):
     global data
-    return render_template('quiz_letter.html', id=id)
+    return render_template('quiz_phase1_letter.html', id=id)
+
+@app.route('/quiz/phase2/letter/<int:id>')
+def quiz_phase2_letter(id):
+    global data
+    return render_template('quiz_phase2_letter.html', id=id)
 
 @app.route('/quiz/syllable/<int:id>')
 def quiz_syllable(id):
     global data
     return render_template('quiz_syllable.html', id=id)
+
+@app.route('/find_letter', methods=['GET', 'POST'])
+def find_letter():
+    global alphabet
+    json_data = request.get_json()
+    info = json_data
+    stats = {}
+    for x in alphabet:
+        if info ==x["id"]:
+            stats = x
+    #send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(stats = stats)
+
+@app.route('/all_letters', methods=['GET', 'POST'])
+def all_letters():
+    global alphabet
+    json_data = request.get_json()
+    info = json_data
+    stats = alphabet
+    #send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(stats = stats)
+
 
 # RUN / DEBUG
 
