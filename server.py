@@ -250,17 +250,12 @@ def learn_letter(id):
     global data
     return render_template('learn_letter.html', id=id)
 
-@app.route('/learn/syllable/<int:id>')
-def learn_syllable(id):
-    global data
-    return render_template('learn_syllable.html', id=id)
-
-@app.route('/quiz/phase1/letter/<int:id>')
+@app.route('/quiz/class1/letter/<int:id>')
 def quiz_phase1_letter(id):
     global data
     return render_template('quiz_phase1_letter.html', id=id)
 
-@app.route('/quiz/phase2/letter/<int:id>')
+@app.route('/quiz/class2/letter/<int:id>')
 def quiz_phase2_letter(id):
     global data
     return render_template('quiz_phase2_letter.html', id=id)
