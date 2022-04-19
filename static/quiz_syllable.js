@@ -54,6 +54,19 @@ function clear() {
     })
 }
 
+function submit() {
+    $("#submit_button").click(function() {
+        if (dropbox_text == syllable.hangul) {
+            $("#check-work").html("Correct!")
+            $("#check-work").addClass("check-work-correct")
+        }
+        else {
+            $("#check-work").html("INCORRECT! Try again!")
+            $("#check-work").addClass("check-work-incorrect")
+        }
+    })
+}
+
 function dropboxDroppable(){
     $("#drop-box").droppable({
         tolerance: "touch",

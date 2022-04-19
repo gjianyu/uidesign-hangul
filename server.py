@@ -1,4 +1,4 @@
-import playsound
+import random
 from email.mime import audio
 from flask import Flask
 from flask import render_template
@@ -7,6 +7,7 @@ from flask import redirect
 app = Flask(__name__)
 
 # DATA
+quizzed = []
 alphabet = [
     {
         "id": 1,
@@ -278,11 +279,18 @@ def learn_syllable(id):
     syllable = syllables[id-1]
     return render_template('learn_syllable.html', syllable=syllable)
 
-@app.route('/quiz/syllable/<int:id>')
-def quiz_syllable(id):
+@app.route('/quiz/syllable')
+def quiz_syllable():
     global syllables
-    syllable = syllables[id-1]
-    return render_template('quiz_syllable.html', syllable=syllable)
+    global quizzed
+    if len(quizzed) == len(syllables):
+        quizzed = []
+    rand_syll = random.choice(syllables)
+    while rand_syll["id"] in quizzed:
+        rand_syll = random.choice(syllables)
+    quizzed.append(rand_syll["id"])
+    print("\n", quizzed)
+    return render_template('quiz_syllable.html', syllable=rand_syll)
 
 @app.route('/find_letter', methods=['GET', 'POST'])
 def find_letter():
