@@ -4,6 +4,7 @@
 <head>
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_class2_letter.js') }}"></script>
     <script>
+        let letter = {{letter|tojson}}
         $(document).ready(function() {
             let id = {{id|tojson}}
             let info = display_info(id)
