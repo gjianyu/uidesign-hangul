@@ -7,6 +7,7 @@ from flask import redirect
 app = Flask(__name__)
 
 # DATA
+alphabet_quizzed = []
 syllable_quizzed = []
 vocab_quizzed = []
 alphabet = [
@@ -251,18 +252,33 @@ def welcome():
 
 @app.route('/learn/letter/<int:id>')
 def learn_letter(id):
-    global data
     return render_template('learn_letter.html', id=id)
 
-@app.route('/quiz/class1/letter/<int:id>')
-def quiz_class1_letter(id):
-    global data
-    return render_template('quiz_class1_letter.html', id=id)
+@app.route('/quiz/class1/letter')
+def quiz_class1_letter():
+    global alphabet
+    global alphabet_quizzed
+    if len(alphabet_quizzed) == len(alphabet):
+        alphabet_quizzed = []
+    rand = random.choice(alphabet)
+    while rand["id"] in alphabet_quizzed:
+        rand = random.choice(alphabet)
+    alphabet_quizzed.append(rand["id"])
+    print("\n", alphabet_quizzed)
+    return render_template('quiz_class1_letter.html', id=rand["id"], letter=rand)
 
-@app.route('/quiz/class2/letter/<int:id>')
-def quiz_class2_letter(id):
-    global data
-    return render_template('quiz_class2_letter.html', id=id)
+@app.route('/quiz/class2/letter')
+def quiz_class2_letter():
+    global alphabet
+    global alphabet_quizzed
+    if len(alphabet_quizzed) == len(alphabet):
+        alphabet_quizzed = []
+    rand = random.choice(alphabet)
+    while rand["id"] in alphabet_quizzed:
+        rand = random.choice(alphabet)
+    alphabet_quizzed.append(rand["id"])
+    print("\n", alphabet_quizzed)
+    return render_template('quiz_class2_letter.html', id=rand)
 
 @app.route('/learn/syllable/<int:id>')
 def learn_syllable(id):
