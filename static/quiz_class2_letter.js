@@ -8,17 +8,20 @@ function display_info(info){
     find_letter(info)
 }
 function show_info(info){
-    $("#quiz-hangul").append(stats["hangul"])
+    $("#quiz-hangul").html(letter.hangul)
     $(".question").append("<p>How do you pronounce " + stats["hangul"] + "?</p>")
 
     $(".form").submit(function(event){
         $("#input-feedback").empty()
         event.preventDefault()
         answerVal = $("#hangul-question").val()
-        if($.trim(answerVal) == stats["pronunciation"]){
+        console.log(letter.pronunciation)
+        if($.trim(answerVal) == letter.pronunciation){
+            console.log($.trim(answerVal))
             $("#input-feedback").append("Correct!")
         }
         else{
+            console.log($.trim(answerVal))
             $("#input-feedback").append("Incorrect. Try again.")
         }
     });

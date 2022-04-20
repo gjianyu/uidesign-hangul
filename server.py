@@ -278,7 +278,7 @@ def quiz_class2_letter():
         rand = random.choice(alphabet)
     alphabet_quizzed.append(rand["id"])
     print("\n", alphabet_quizzed)
-    return render_template('quiz_class2_letter.html', id=rand)
+    return render_template('quiz_class2_letter.html', id=rand, letter=rand)
 
 @app.route('/learn/syllable/<int:id>')
 def learn_syllable(id):
@@ -339,6 +339,19 @@ def find_letter():
         if info ==x["id"]:
             stats = x
     # send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(stats = stats)
+
+@app.route('/find_word', methods=['GET', 'POST'])
+def find_word():
+    global vocabulary
+    json_data = request.get_json()
+    info = json_data
+    stats = {}
+    for x in vocabulary:
+        if info ==x["id"]:
+            stats = x  
+    # send back the WHOLE array of data, so the client can redisplay it
+    print(stats)
     return jsonify(stats = stats)
 
 @app.route('/all_letters', methods=['GET', 'POST'])
