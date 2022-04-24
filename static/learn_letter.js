@@ -34,6 +34,7 @@ function show_info(info){
         answerVal = $("#hangul-question").val()
         if($.trim(answerVal) == stats["pronunciation"]){
             $("#input-feedback").append("Correct!")
+            document.getElementById("submit").disabled = true;
         }
         else{
             $("#input-feedback").append("Incorrect. Try again.")

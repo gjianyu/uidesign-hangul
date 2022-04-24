@@ -8,12 +8,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
     <!--- STYLESHEETS AND JS FILES --->
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/hangul-js" type="text/javascript"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <style>
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+    .dropdown-item:hover>.dropdown-menu {
+        display: block;
+    }
+    ul li{
+        list-style-type:none;
+        display: inline;
+    }
+    .navbar-nav .nav-link{display:inline-block;}
+    .ml-auto {display:inline-block!important;}
+    .dropdown>.dropdown-toggle:active {
+        pointer-events: none;
+    }
+    </style>
 
     <!--- FONTS --->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,38 +49,45 @@
 
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="http://127.0.0.1:5000/">호랑이 Holang-i</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://127.0.0.1:5000/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5000/learn/letter/1" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Learn
+                    </a>
+                    <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="http://127.0.0.1:5000/learn/letter/1" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Letters and Sounds &raquo;</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                             <a class="dropdown-item" href="../../../learn/letter/1">ㄱ</a>
+                              <a class="dropdown-item" href="../../../learn/letter/2">ㄴ</a>
+                              <a class="dropdown-item" href="../../../learn/letter/3">ㅂ</a>
+                              <a class="dropdown-item" href="../../../learn/letter/4">ㅅ</a>
+                              <a class="dropdown-item" href="../../../learn/letter/5">ㅎ</a>
+                              <a class="dropdown-item" href="../../../learn/letter/6">ㅏ</a>
+                          </div>
+                        <a class="dropdown-item" href="http://127.0.0.1:5000/learn/syllable/1">Constructing Syllables</a>
+                        <a class="dropdown-item" href="http://127.0.0.1:5000/learn/vocab/1">Words and Meanings</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5000/quiz/class1/letter" id="quizDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Quiz
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="quizDropdown">
+                        <a class="dropdown-item" href="http://127.0.0.1:5000/quiz/class1/letter">Letters and Sounds</a>
+                        <a class="dropdown-item" href="http://127.0.0.1:5000/quiz/syllable">Constructing Syllables</a>
+                        <a class="dropdown-item" href="http://127.0.0.1:5000/quiz/class1/vocab">Words and Meanings</a>
+                    </div>
+                </li>
 
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <a class="navbar-brand" href="http://127.0.0.1:5000/">호랑이 Holang-i</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="http://127.0.0.1:5000/">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5000/learn/letter/1" id="learnDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Learn
-                </a>
-                <div class="dropdown-menu" aria-labelledby="learnDropdown">
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/learn/letter/1">Letters and Sounds &raquo;</a>
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/learn/syllable/1">Constructing Syllables</a>
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/learn/vocab/1">Words and Meanings</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://127.0.0.1:5000/quiz/class1/letter" id="quizDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Quiz
-                </a>
-                <div class="dropdown-menu" aria-labelledby="quizDropdown">
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/quiz/class1/letter">Letters and Sounds</a>
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/quiz/syllable">Constructing Syllables</a>
-                    <a class="dropdown-item" href="http://127.0.0.1:5000/quiz/class1/vocab">Words and Meanings</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-
+            </ul>
+        </div>
+    </nav>
 <div class="container">
 
     {% block content %}
