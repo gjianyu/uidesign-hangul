@@ -2,6 +2,7 @@
 {% block learn_content %}
 <head>
     <script type="text/javascript" src="{{ url_for('static', filename = 'learn_letter.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='learn_letter.css')}}">
     <script>
         $(document).ready(function() {
             let id = {{id|tojson}}
