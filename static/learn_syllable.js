@@ -59,13 +59,13 @@ function submit() {
     $("#submit_button").click(function() {
         if (dropbox_text == syllable.hangul) {
             $("#check-work").html("Correct!")
-            $("#check-work").removeClass("check-work-incorrect")
-            $("#check-work").addClass("check-work-correct")
+            $("#check-work").removeClass("alert-danger")
+            $("#check-work").addClass("alert-success")
         }
         else {
             $("#check-work").html("INCORRECT! Try again!")
-            $("#check-work").removeClass("check-work-correct")
-            $("#check-work").addClass("check-work-incorrect")
+            $("#check-work").removeClass("alert-success")
+            $("#check-work").addClass("alert-danger")
         }
     })
 }
