@@ -51,6 +51,7 @@ function clear() {
     $("#clear_button").click(function() {
         dropbox_text = ""
         $("#drop-box").html(dropbox_text)
+        $("#check-work").empty()
     })
 }
 
@@ -81,15 +82,12 @@ function dropboxDroppable(){
 
 function draggableTablePopulate(){
     $.each(letters, function(index, value){
-        let new_letter = $("<div>")
+        let new_letter = $("<div class='draggable-letter'>")
         $(new_letter).html(value).addClass("col-4")
         $(new_letter).attr("data", value)
         $(new_letter).on("click", function() {
             play(value)
         })
-        // how to make dragged letter go in front of box?
-        // $(new_letter).position("relative")
-        // $(new_letter).zIndex(1)
         $(new_letter).on("mouseover", function(){
             $(new_letter).draggable({
                 revert: true,

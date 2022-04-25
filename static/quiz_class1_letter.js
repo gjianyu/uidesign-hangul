@@ -5,7 +5,7 @@ $(document).ready(function() {
 })
 function display_info(info){
     $("#hangul-question").empty()
-    $("#input-feedback").empty()
+    $("#check-work").empty()
     console.log(info)
     all_letters(info)
 }
@@ -22,35 +22,57 @@ function play() {
 }
 
 function show_info(info){
-    $.each(stats, function(i, letter){
-        let row = $("<div class = 'row'>")
-        $("#options").append(row)
-        let col_options = $("<div class = 'col-md-12'>")
-        $(col_options).append("<button type='button' class='btn btn-secondary' style='width:80px;margin:2px;' id= '"+ i + "' value= '" + letter["hangul"] + "'>"+letter["hangul"]+"</button>")
 
-        // $(col_options).append("<button type='button' class='btn btn-secondary' id= '"+ i + "'>"+letter["hangul"]+"</button>")
-        $(row).append(col_options)
+    let options = $("#options")
+    let first_row = $("<div class = 'row'>")
+    let second_row = $("<div class = 'row'>")
+    let third_row = $("<div class = 'row'>")
 
-        $(".btn-secondary").click(function(e) {
-            let clicked = e.target
-            console.log(clicked.value)
-
-            if (curr == clicked.value) {
-                $("#input-feedback").empty()
-                $("#change-state").empty()
-                $("#input-feedback").append("Correct!")
-                $("#change-state").append("<a class = 'p-3 prev next-button btn btn-light'  href='#'>← PREVIOUS</a>")
-                $("#change-state").append("<a class = 'p-3 prev next-button btn btn-light'  href='#'> NEXT →</a>")
-            }
-            else {
-
-                $("#input-feedback").empty()
-                $("#input-feedback").append("Incorrect!")
-            }
-
-        });
+    $.each(stats, function(i, letter) {
+        if (i < 2) {
+            let button_col = $("<div class = 'col-6 d-flex justify-content-center'>")
+            first_row.append(button_col)
+            button_col.append("<button type='button' class='btn btn-hangul-option' id= '" + i + "' value= '" + letter["hangul"] + "'>" + letter["hangul"] + "</button>")
+        } else if (i < 4) {
+            let button_col = $("<div class = 'col-6 d-flex justify-content-center'>")
+            second_row.append(button_col)
+            button_col.append("<button type='button' class='btn btn-hangul-option' id= '" + i + "' value= '" + letter["hangul"] + "'>" + letter["hangul"] + "</button>")
+        } else {
+            let button_col = $("<div class = 'col-6 d-flex justify-content-center'>")
+            third_row.append(button_col)
+            button_col.append("<button type='button' class='btn btn-hangul-option' id= '" + i + "' value= '" + letter["hangul"] + "'>" + letter["hangul"] + "</button>")
+        }
     })
+
+    options.append(first_row)
+    options.append(second_row)
+    options.append(third_row)
+
+    $(".btn-hangul-option").click(function(e) {
+        let clicked = e.target
+        console.log(clicked.value)
+
+        let check_work = $("#check-work")
+        let change_state = $("#change-state")
+
+        if (curr == clicked.value) {
+            check_work.empty()
+            change_state.empty()
+            check_work.html("Correct!")
+            check_work.removeClass("alert-danger")
+            check_work.addClass("alert-success")
+            change_state.append("<a class = 'mr-auto p-3 prev-next-button'  href='#'>← PREVIOUS</a>")
+            change_state.append("<a class = 'p-3 prev-next-button'  href='#'> NEXT →</a>")
+        }
+        else {
+            $("#check-work").empty()
+            $("#check-work").html("INCORRECT! Try again!")
+            $("#check-work").removeClass("alert-success")
+            $("#check-work").addClass("alert-danger")
+        }
+    });
 }
+
 function get_id(getId){
     let info = getId
     find_letter(info)

@@ -20,7 +20,7 @@ function play() {
 
 function show_info(info){
     $("#hangul-character").append(stats["hangul"])
-    $("#hangul-image-div").append("<img id='hangul-image' src ='"+ stats["image"]+"'></img>")
+    $("#hangul-image-div").append("<img id='hangul-image' src ='" + stats["image"] + "'/>")
     $("#hangul-audio").on("click", function() {
         play()
     })
@@ -43,25 +43,24 @@ function show_info(info){
             $("#check-work").addClass("alert-danger")
         }
       
-        let isCorrect= document.getElementById("input-feedback").innerHTML
+        let isCorrect= document.getElementById("check-work").innerHTML
         console.log(isCorrect)
-        $("#change-state").append("<div class = 'd-flex justify-content-between prev-next'>")
 
         let prev_id = stats["id"] - 1
         let curr_id = stats["id"]
         let next_id = stats["id"] + 1
         
-        if(stats["end"]=="1" && isCorrect=="Correct!"){
-            $("#change-state").append("<a class = 'mr-auto p-3 prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
-            $("#change-state").append("<a class = 'p-3 prev-next-button' href = '../../quiz/class1/letter'>NEXT →</a></div>")
+        if(stats["end"] === "1" && isCorrect === "Correct!"){
+            $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
+            $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter'>NEXT →</a></div>")
         }
-        else if(prev_id == 0 && isCorrect=="Correct!"){
-            $("#change-state").append("<a class = 'mr-auto p-3 prev-next-button' href='#'>← PREVIOUS</a>")
-            $("#change-state").append("<a class = 'p-3 prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
+        else if(prev_id === 0 && isCorrect === "Correct!"){
+            $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='#'>← PREVIOUS</a>")
+            $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
         }
-        else if(isCorrect=="Correct!"){
-            $("#change-state").append("<a class = 'mr-auto p-3 prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
-            $("#change-state").append("<a class = 'p-3 prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
+        else if(isCorrect === "Correct!"){
+            $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
+            $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
         }
     });
 }

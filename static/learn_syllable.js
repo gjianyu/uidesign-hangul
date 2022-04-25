@@ -61,6 +61,9 @@ function submit() {
             $("#check-work").html("Correct!")
             $("#check-work").removeClass("alert-danger")
             $("#check-work").addClass("alert-success")
+            document.getElementById("clear_button").disabled = true;
+            document.getElementById("submit_button").disabled = true;
+            loadPages()
         }
         else {
             $("#check-work").html("INCORRECT! Try again!")
@@ -88,9 +91,6 @@ function draggableTablePopulate(){
         $(new_letter).on("click", function() {
             play(value)
         })
-        // how to make dragged letter go in front of box?
-        // $(new_letter).position("relative")
-        // $(new_letter).zIndex(1)
         $(new_letter).on("mouseover", function(){
             $(new_letter).draggable({
                 revert: true,
@@ -113,22 +113,21 @@ function loadPages() {
     let next_id = id + 1
 
     if(next_id === syllable.length){
-        $("#change-state").append("<a class = 'mr-auto p-3 prev-next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 prev-next-button' href = '../../quiz/class1/letter/1'>NEXT →</a></div>")
+        $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
+        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter/1'>NEXT →</a></div>")
     }
     else if(prev_id == 0){
-        $("#change-state").append("<a class = 'mr-auto p-3 prev-next-button' href='#'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
+        $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='#'>← PREVIOUS</a>")
+        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
     }
     else{
-        $("#change-state").append("<a class = 'mr-auto p-3 prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
+        $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
+        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
     }
 }
 
 $(document).ready(function(){
     draggableTablePopulate()
-    loadPages()
     dropboxDroppable()
     clear()
     submit()
