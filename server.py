@@ -284,7 +284,7 @@ def quiz_class2_letter():
 def learn_syllable(id):
     global syllables
     syllable = syllables[id-1]
-    return render_template('learn_syllable.html', syllable=syllable)
+    return render_template('learn_syllable.html', id=id, syllable=syllable)
 
 @app.route('/quiz/syllable')
 def quiz_syllable():

@@ -9,6 +9,7 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'learn_syllable.js') }}"></script>
 
 <script>
+    let id = {{id|tojson}}
     let syllable = {{syllable|tojson}}
 </script>
 
@@ -42,6 +43,8 @@
                 <div id="drop-box" class="">
                 </div>
             </div>
+        </div>
+        <div id = "change-state" class="d-flex">
         </div>
     </div>
 </body>

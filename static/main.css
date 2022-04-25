@@ -155,6 +155,10 @@ body {
     font-weight: bold;
 }
 
+.btn-clear {
+    border: 1px solid #111;
+}
+
 .btn-submit {
     background-color: #F46036;
     color: #fff;
@@ -192,8 +196,8 @@ body {
     padding: 0 50px;
 }
 
-.btn-clear {
-    border: 1px solid #111;
+.draggable-letter {
+    z-index: 100;
 }
 
 #drop-box {
