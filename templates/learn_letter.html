@@ -2,6 +2,7 @@
 {% block learn_content %}
 <head>
     <script type="text/javascript" src="{{ url_for('static', filename = 'learn_letter.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='learn_letter.css')}}">
     <script>
         $(document).ready(function() {
             let id = {{id|tojson}}
@@ -35,7 +36,7 @@
                 <div class="col">
                     <input  class="form-control" id="hangul-question" placeholder="Answer...">
                 </div>
-                <input type="submit" class="btn btn-submit"></input>
+                <input type="submit" id="submit" class="btn btn-submit"></input>
             </div>
         </form>
         <div id = "change-state" class="d-flex">

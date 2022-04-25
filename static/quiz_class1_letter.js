@@ -26,7 +26,7 @@ function show_info(info){
         let row = $("<div class = 'row'>")
         $("#options").append(row)
         let col_options = $("<div class = 'col-md-12'>")
-        $(col_options).append("<button type='button' class='btn btn-secondary' id= '"+ i + "' value= '" + letter["hangul"] + "'>"+letter["hangul"]+"</button>")
+        $(col_options).append("<button type='button' class='btn btn-secondary' style='width:80px;margin:2px;' id= '"+ i + "' value= '" + letter["hangul"] + "'>"+letter["hangul"]+"</button>")
 
         // $(col_options).append("<button type='button' class='btn btn-secondary' id= '"+ i + "'>"+letter["hangul"]+"</button>")
         $(row).append(col_options)
@@ -37,7 +37,10 @@ function show_info(info){
 
             if (curr == clicked.value) {
                 $("#input-feedback").empty()
+                $("#change-state").empty()
                 $("#input-feedback").append("Correct!")
+                $("#change-state").append("<a class = 'p-3 prev next-button btn btn-light'  href='#'>← PREVIOUS</a>")
+                $("#change-state").append("<a class = 'p-3 prev next-button btn btn-light'  href='#'> NEXT →</a>")
             }
             else {
 
@@ -60,6 +63,7 @@ function show_letter(info){
     let curr_id = stats["id"]
     let next_id = stats["id"] + 1
 
+/*
     if(stats["end"]=="1"){
         $("#change-state").append("<a class = 'p-3 prev next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
         $("#change-state").append("<a class = 'p-3 prev next-button' href = '../../class2/letter/1'>NEXT →</a></div>")
@@ -72,6 +76,7 @@ function show_letter(info){
         $("#change-state").append("<a class = 'p-3 prev next-button' href='"+prev_id +"'>← PREVIOUS</a>")
         $("#change-state").append("<a class = 'p-3 prev next-button' href = '"+ next_id+"'>NEXT →</a></div>")
     }
+*/
 
     // HAVE TO DO: Check if selected button is same as audio
 }
