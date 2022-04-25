@@ -9,7 +9,8 @@ function display_info(info){
 }
 function show_info(info){
     $("#quiz-hangul").html(letter.hangul)
-    $(".question").append("<p>How do you pronounce " + stats["hangul"] + "?</p>")
+    console.log(letter)
+    $(".question").append("<p>How do you pronounce " + letter.hangul + "?</p>")
 
     $(".form").submit(function(event){
         $("#input-feedback").empty()
@@ -31,18 +32,36 @@ function show_info(info){
     let curr_id = stats["id"]
     let next_id = stats["id"] + 1
 
-    if(stats["end"]=="1"){
-        $("#change-state").append("<a class = 'p-3 prev next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 prev next-button' href = '../../../learn/syllable/1'>NEXT →</a></div>")
+    quiz_done = false
+    total = 100
+    score = 85
+
+    if (total > 6 && score/total >= 0.85) {
+        quiz_done = true
     }
-    else if(prev_id == 0){
-        $("#change-state").append("<a class = 'p-3 prev next-button' href='#'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 prev next-button' href = '" + next_id+"'>NEXT →</a></div>")
+    else {
+        quiz_done = false
     }
-    else{
-        $("#change-state").append("<a class = 'p-3 prev next-button' href='"+prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 prev next-button' href = '"+ next_id+"'>NEXT →</a></div>")
+
+    if (quiz_done) {
+        alert("You're ready to do level 2!")
     }
+    else {
+        $("#change-state").append("<a class = 'p-3 prev-next-button'  href='../../quiz/class1/letter'> NEXT →</a>")
+    }
+
+    // if(stats["end"]=="1"){
+    //     $("#change-state").append("<a class = 'p-3 prev next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
+    //     $("#change-state").append("<a class = 'p-3 prev next-button' href = '../../../learn/syllable/1'>NEXT →</a></div>")
+    // }
+    // else if(prev_id == 0){
+    //     $("#change-state").append("<a class = 'p-3 prev next-button' href='#'>← PREVIOUS</a>")
+    //     $("#change-state").append("<a class = 'p-3 prev next-button' href = '" + next_id+"'>NEXT →</a></div>")
+    // }
+    // else{
+    //     $("#change-state").append("<a class = 'p-3 prev next-button' href='"+prev_id +"'>← PREVIOUS</a>")
+    //     $("#change-state").append("<a class = 'p-3 prev next-button' href = '"+ next_id+"'>NEXT →</a></div>")
+    // }
 
 }
 function find_letter(info){

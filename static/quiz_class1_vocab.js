@@ -45,7 +45,7 @@ function clear() {
 
 function submit() {
     $("#submit_button").click(function() {
-        if (dropbox_text == syllable.hangul) {
+        if (dropbox_text == vocab.hangul) {
             $("#check-work").html("Correct!")
             $("#check-work").removeClass("check-work-incorrect")
             $("#check-work").addClass("check-work-correct")
@@ -96,4 +96,5 @@ $(document).ready(function(){
     draggableTablePopulate()
     dropboxDroppable()
     clear()
+    submit()
 })

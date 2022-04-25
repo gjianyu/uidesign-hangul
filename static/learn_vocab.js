@@ -33,12 +33,17 @@ function show_info(info){
     $("#form").submit(function(event){
         $("#check-work").empty()
         event.preventDefault()
-        answerVal = $("#hangul-question-1").val()
-        if($.trim(answerVal) == stats["pronunciation"]){
+        pronunVal = $("#hangul-question-1").val()
+        defnVal = $("#hangul-question-2").val()
+        if($.trim(pronunVal) == stats["pronunciation"] && $.trim(defnVal) == stats["definition"]){
             $("#check-work").append("Correct!")
+            $("#check-work").removeClass("check-work-incorrect")
+            $("#check-work").addClass("check-work-correct")
         }
         else{
             $("#check-work").append("Incorrect. Try again.")
+            $("#check-work").removeClass("check-work-correct")
+            $("#check-work").addClass("check-work-incorrect")
         }
     });
     $("#change-state").append("<div class = 'd-flex justify-content-between prev-next'>")

@@ -13,11 +13,11 @@ function display_info(info){
 function play() {
     console.log(stats)
     let audio_path = "http://127.0.0.1:8080/"
-    audio_path += letter.audio
-    console.log(audio_path)
+    audio_path += stats["audio"]
+    // console.log(audio_path)
     let audio = new Audio(audio_path)
     audio.play()
-    curr = letter.hangul
+    curr = stats["hangul"]
     // console.log(letter.hangul)
 }
 
@@ -55,14 +55,29 @@ function show_info(info){
         let check_work = $("#check-work")
         let change_state = $("#change-state")
 
+        quiz_done = false
+        total = 5
+        score = 1
+
+        if (total > 6 && score/total >= 0.85) {
+            quiz_done = false
+        }
+        else {
+            quiz_done = false
+        }
+
         if (curr == clicked.value) {
             check_work.empty()
             change_state.empty()
             check_work.html("Correct!")
             check_work.removeClass("alert-danger")
             check_work.addClass("alert-success")
-            change_state.append("<a class = 'mr-auto p-3 prev-next-button'  href='#'>← PREVIOUS</a>")
-            change_state.append("<a class = 'p-3 prev-next-button'  href='#'> NEXT →</a>")
+            if (quiz_done) {
+                alert("You're ready to do level 2!")
+            }
+            else {
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../quiz/class2/letter'> NEXT →</a>")
+            }
         }
         else {
             $("#check-work").empty()
