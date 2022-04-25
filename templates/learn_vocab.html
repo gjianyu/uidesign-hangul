@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="col-6 my-auto hangul-col d-flex justify-content-center">
-        <div id = "image">
+        <div id = "hangul-image-div">
         </div>
         <div id="hangul-character">
         </div>
@@ -22,26 +22,35 @@
         </div>
     </div>
     <div class="col-6 my-auto hangul-col">
-        <div id = "input-feedback">
+        <div id = "input-feedback" class="alert">
         </div>
         <div id="hangul-desc">
         </div>
         <br>
         <form id="form">
             <div class="form-row">
-                <div class = "col question">
+                <div id="question-1" class = "col question">
+                </div>
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input  class="form-control" id="hangul-question-1" placeholder="Answer...">
+                    <input class="form-control" id="hangul-question-1" placeholder="Answer...">
                 </div>
+            </div>
+            <div class="form-row">
+                <div id="question-2" class = "col question">
+                </div>
+            </div>
+            <div class="form-row">
                 <div class="col">
-                    <input  class="form-control" id="hangul-question-2" placeholder="Answer...">
+                    <input class="form-control" id="hangul-question-2" placeholder="Answer...">
                 </div>
-                <input type="submit" class="btn btn-submit"></input>
+            </div>
+            <div class="form-row">
+                <input type="submit" id="submit" class="btn btn-submit"/>
             </div>
         </form>
-        <div id = "change-state">
+        <div id = "change-state" class="d-flex">
         </div>
     </div>
 </body>

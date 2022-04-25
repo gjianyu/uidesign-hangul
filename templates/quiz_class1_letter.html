@@ -4,9 +4,9 @@
 <head>
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_class1_letter.js') }}"></script>
     <script>
-        let letter = {{letter|tojson}}
         $(document).ready(function() {
             let id = {{id|tojson}}
+            let letter = {{letter|tojson}}
             let info = display_info(id)
             let getId = get_id(id)
             console.log(id)
@@ -20,14 +20,14 @@
     </div>
 </div>
 <div class="col-6 my-auto hangul-col">
+    <div id = "check-work" class="alert">
+    </div>
     <div id = "instructions">
         <p>Listen to the audio clip and select the matching hangul character.</p>
     </div>
-    <div id = "input-feedback">
-    </div>
     <div id = "options">
     </div>
-    <div id = "change-state" style='padding:10px;'>
+    <div id = "change-state">
     </div>
 </div>
 {% endblock %}
