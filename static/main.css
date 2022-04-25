@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans serif;
-    font-size: 24px;
+    font-size: 18px;
     background-color: #fafafa;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-    padding: 50px;
+    padding: 25px 50px;
     width: 80%;
     max-width: 1800px!important;
     overflow: hidden;
@@ -70,7 +70,7 @@ body {
     background-color: #F46036;
     color: #fff;
     border-radius: 1.5em;
-    padding-left: 18px;
+    padding-left: 13px;
     margin-right: 15px;
 }
 
@@ -90,6 +90,7 @@ body {
 }
 
 .prev-next-button {
+    line-height: 60%;
     background-color: #fff;
     color: #444;
     font-weight: bold;
@@ -112,16 +113,16 @@ body {
 }
 
 #hangul-image {
-    width: 240px;
-    height: 240px;
+    width: 190px;
+    height: 190px;
     border: 5px solid #111;
     border-radius: 30px;
     box-shadow: 3px 3px 5px #444;
 }
 
 #hangul-character {
-    width: 240px;
-    height: 240px;
+    width: 190px;
+    height: 190px;
     font-size: 8em;
     background-color: #fff;
     border: 5px solid #111;
@@ -129,22 +130,22 @@ body {
     box-shadow: 3px 3px 5px #444;
     text-align: center;
     line-height: 1.3em;
-    margin-top: 160px;
-    margin-left: -80px;
+    margin-top: 140px;
+    margin-left: -60px;
 }
 
 #hangul-audio {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: #F46036;
     color: #fff;
     border: 5px solid #111;
     border-radius: 50px;
     box-shadow: 1px 1px 5px #444;
     font-size: 2em;
-    padding: 10px 20px;
-    margin-top: 25px;
-    margin-left: -120px;
+    padding: 10px 15px;
+    margin-top: 40px;
+    margin-left: -105px;
 }
 
 /* LEARN LETTER */
@@ -152,6 +153,10 @@ body {
 #hangul-desc {
     font-size: 2em;
     font-weight: bold;
+}
+
+.btn-clear {
+    border: 1px solid #111;
 }
 
 .btn-submit {
@@ -170,10 +175,19 @@ body {
     padding: 10px 0;
 }
 
+#change-state {
+    padding: 50px 10px 0 10px;
+}
+
+.alert {
+    line-height: 75%;
+    font-weight: bold;
+}
+
 /* LEARN SYLLABLE */
 
 #syllable-desc {
-    padding: 25px 0;
+    padding-bottom: 25px;
 }
 
 .drag-col {
@@ -182,21 +196,13 @@ body {
     padding: 0 50px;
 }
 
-.btn-clear {
-    border: 1px solid #111;
-}
-
-.check-work-correct {
-    color: green
-}
-
-.check-work-incorrect {
-    color: red
+.draggable-letter {
+    z-index: 100;
 }
 
 #drop-box {
-    width: 240px;
-    height: 240px;
+    width: 190px;
+    height: 190px;
     font-size: 8em;
     background-color: #fff;
     border: 5px solid #111;
@@ -223,8 +229,8 @@ body {
 
 /* QUIZ SYLLABLE */
 #quiz-audio {
-    width: 240px;
-    height: 240px;
+    width: 190px;
+    height: 190px;
     background-color: #F46036;
     color: #fff;
     border: 5px solid #111;
