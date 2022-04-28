@@ -4,14 +4,11 @@
 <head>
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_class1_letter.js') }}"></script>
     <script>
-        $(document).ready(function() {
-            let id = {{id|tojson}}
-            let letter = {{letter|tojson}}
-            let info = display_info(id)
-            let getId = get_id(id)
-            console.log(id)
-        })
-
+        let letter = {{letter|tojson}}
+        let id = {{id|tojson}}
+        let info = display_info(id)
+        let getId = get_id(id)
+        console.log(id)
     </script>
 </head>
 <div class="col-6 my-auto hangul-col d-flex justify-content-center">
@@ -21,6 +18,12 @@
 </div>
 <div class="col-6 my-auto hangul-col">
     <div id = "check-work" class="alert">
+    </div>
+    <div id="score_bar">
+        <div id="score">
+        </div>
+        <div id="percent">
+        </div>
     </div>
     <div id = "instructions">
         <p>Listen to the audio clip and select the matching hangul character.</p>

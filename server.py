@@ -1,3 +1,5 @@
+from functools import total_ordering
+import json
 import random
 from email.mime import audio
 from flask import Flask
@@ -10,6 +12,7 @@ app = Flask(__name__)
 alphabet_quizzed = []
 syllable_quizzed = []
 vocab_quizzed = []
+score = {"total": 0, "correct": 0}
 alphabet = [
     {
         "id": 1,
@@ -329,6 +332,8 @@ def quiz_class2_vocab():
     print("\n", vocab_quizzed)
     return render_template('quiz_class2_vocab.html', vocab=rand_vocab)
 
+# AJAX FUNCTIONS
+
 @app.route('/find_letter', methods=['GET', 'POST'])
 def find_letter():
     global alphabet
@@ -336,7 +341,7 @@ def find_letter():
     info = json_data
     stats = {}
     for x in alphabet:
-        if info ==x["id"]:
+        if info == x["id"]:
             stats = x
     # send back the WHOLE array of data, so the client can redisplay it
     return jsonify(stats = stats)
@@ -363,6 +368,23 @@ def all_letters():
     # send back the WHOLE array of data, so the client can redisplay it
     return jsonify(stats = stats)
 
+@app.route('/score', methods=['GET', 'POST'])
+def score_method():
+    global score
+    print(score)
+    if request.method == 'GET':
+        print("json_data null, returning current score")
+        return jsonify(total=score["total"], correct=score["correct"])
+    else:
+        json_data = request.get_json()
+        if json_data == "reset":
+            score = {"total": 0, "correct": 0}
+            print("reset:", json_data)
+            return jsonify(total=0, correct=0)
+        else:
+            print("else:", json_data)
+            score = json_data
+            return jsonify(total=score["total"], correct=score["correct"])
 
 # RUN / DEBUG
 
