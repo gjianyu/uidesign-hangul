@@ -97,7 +97,7 @@ function draggableTablePopulate(){
                 revertDuration: 0
             })
         })
-        
+
         if (value in ["ㄱ", "ㄴ", "ㅂ"]) {
             $("#first_row_of_drag_table").append(new_letter)
         }
@@ -112,12 +112,11 @@ function loadPages() {
     let curr_id = id
     let next_id = id + 1
 
-    if(next_id === syllable.length){
-        $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter/1'>NEXT →</a></div>")
+    if(curr_id == 12){
+        $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
+        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/syllable'>NEXT →</a></div>")
     }
     else if(prev_id == 0){
-        $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='#'>← PREVIOUS</a>")
         $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
     }
     else{
