@@ -273,6 +273,18 @@ def begin_syllable():
 def begin_word():
     return render_template('begin_word.html')
 
+@app.route('/begin/quiz/letter')
+def begin_quiz_letter():
+    return render_template('begin_quiz_letter.html')
+
+@app.route('/begin/quiz/syllable')
+def begin_quiz_syllable():
+    return render_template('begin_quiz_syllable.html')
+
+@app.route('/begin/quiz/word')
+def begin_quiz_word():
+    return render_template('begin_quiz_word.html')
+
 @app.route('/quiz/class1/letter')
 def quiz_class1_letter():
     global alphabet

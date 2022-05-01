@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="row welcome-row">
+    <div id="welcome-col-1" class="col-6 my-auto">
+        <div id="welcome-title">
+            Vocab Quiz
+        </div>
+        <div id="welcome-desc">
+            It's time to test your knowledge of these <b>six</b> Korean words!
+            <br><br>
+            To pass this quiz, you will need
+            <div class="row begin-row">
+                <span class="module-syllable-number">85</span>percent.
+            </div>
+        </div>
+    </div>
+    <div class="col-6 my-auto">
+        <div id = "begin-desc">
+            In this quiz, you will answer questions until you reach the passing grade of <b>85%</b>.
+            <br><br>
+            Make sure to turn on your audio, and let's get started!
+        </div>
+        <div id = "change-state" class="d-flex">
+            <a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/vocab'>NEXT →</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
