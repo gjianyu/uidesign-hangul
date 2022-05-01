@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="row welcome-row">
+    <div id="welcome-col-1" class="col-6 my-auto">
+        <div id="welcome-title">
+            Letters
+        </div>
+        <div id="welcome-desc">
+            The goal of this lesson is to learn <b>six</b> Korean letters
+            <div class="row begin-row">
+                <span class="module-number">5</span> consonants
+            </div>
+            <div class="row begin-row">
+                <span class="module-number">1</span> vowel
+            </div>
+            <br><br>
+        </div>
+    </div>
+    <div class="col-6 my-auto">
+        <div id = "begin-desc">
+            After this lesson, you will be ⅓ of the way to mastering 6 Hangul letters!
+            <br><br>
+            During this lesson, make sure you memorize what each letter looks like.
+        </div>
+        <div id = "change-state" class="d-flex">
+            <a class = 'p-3 btn prev-next-button' href = '../../learn/letter/1'>NEXT →</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="row welcome-row">
+    <div id="welcome-col-1" class="col-6 my-auto">
+        <div id="welcome-title">
+            Syllables
+        </div>
+        <div id="welcome-desc">
+            The goal of this lesson is to learn to construct a syllable using letters.
+            <br><br>
+            In this lesson, you will learn
+            <div class="row begin-row">
+                <span class="module-syllable-number"> 12</span> syllables
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="col-6 my-auto">
+        <div id = "begin-desc">
+            After this lesson, you will be ⅔ of the way to mastering 6 Hangul letters!
+            <br><br>
+            All syllables consist of:
+            <ul>
+                <div class="row syllable-row">
+                    <span class="module-number">1</span> consonant +
+                </div>
+                <div class="row syllable-row">
+                    <span class="module-number">1</span> vowel +
+                </div>
+                <div class="row syllable-row">
+                    <span class="module-number">1</span> consonant (optional)
+                </div>
+            </ul>
+
+        </div>
+        <div id = "change-state" class="d-flex">
+            <a class = 'p-3 btn prev-next-button' href = '../../learn/syllable/1'>NEXT →</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -14,7 +14,6 @@ body {
     font-weight: bold;
     color: #549F93!important;
 }
-
 .navbar-custom a {
     color: #111;
 }
@@ -52,16 +51,38 @@ body {
     font-family: 'Josefin Sans', sans serif;
     font-weight: bold;
 }
-
+#example{
+    font-size: 1em;
+}
 #welcome-desc {
     font-size: 1.2em;
 }
-
+#begin-desc {
+    font-size: 1.2em;
+    margin: 10px;
+}
+.begin-row {
+    padding: 10px;
+    font-size: 1.5em;
+}
 .module-row {
     padding: 50px;
     font-size: 1.5em;
 }
-
+.syllable-number{
+    width: 1.5em;
+    height: 1.5em;
+    font-weight: bold;
+    background-color: #F46036;
+    color: #fff;
+    border-radius: 1.5em;
+    padding-left: 13px;
+    margin-right: 15px;
+}
+.syllable-row{
+    font-size: 1em;
+    padding: 5px;
+}
 .module-number {
     width: 1.5em;
     height: 1.5em;
@@ -72,7 +93,16 @@ body {
     padding-left: 13px;
     margin-right: 15px;
 }
-
+.module-syllable-number{
+    width: 2em;
+    height: 1.5em;
+    font-weight: bold;
+    background-color: #F46036;
+    color: #fff;
+    border-radius: 1.5em;
+    padding-left: 13px;
+    margin-right: 15px;
+}
 .module-link {
     color: #111;
 }

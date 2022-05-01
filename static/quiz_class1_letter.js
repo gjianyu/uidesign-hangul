@@ -200,7 +200,7 @@ function show_info(info){
             if (quiz_done) {
                 reset_score()
                 alert("You're ready to do level 2!")
-                change_state.append("<a class = 'p-3 prev-next-button'  href='../../learn/syllable/1'> NEXT →</a>")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/syllable'> NEXT →</a>")
             }
             else {
                 change_state.append("<a class = 'p-3 prev-next-button'  href='../../quiz/class2/letter'> NEXT →</a>")
@@ -221,6 +221,7 @@ function show_info(info){
             if (quiz_done) {
                 reset_score()
                 alert("You're ready to do level 2!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/syllable'> NEXT →</a>")
             }
             else {
                 console.log("10")

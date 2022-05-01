@@ -263,6 +263,16 @@ def welcome():
 def learn_letter(id):
     return render_template('learn_letter.html', id=id)
 
+@app.route('/begin/letter/')
+def begin_letter():
+    return render_template('begin_letter.html')
+@app.route('/begin/syllable/')
+def begin_syllable():
+    return render_template('begin_syllable.html')
+@app.route('/begin/word/')
+def begin_word():
+    return render_template('begin_word.html')
+
 @app.route('/quiz/class1/letter')
 def quiz_class1_letter():
     global alphabet
