@@ -52,6 +52,7 @@ function clear() {
         dropbox_text = ""
         $("#drop-box").html(dropbox_text)
         $("#check-work").empty()
+        $("#check-work").removeClass("alert-danger")
     })
 }
 
@@ -66,7 +67,7 @@ function submit() {
             loadPages()
         }
         else {
-            $("#check-work").html("INCORRECT! Try again!")
+            $("#check-work").html("Incorrect. Try again!")
             $("#check-work").removeClass("alert-success")
             $("#check-work").addClass("alert-danger")
         }

@@ -36,34 +36,35 @@ function show_info(info){
         pronunVal = $("#hangul-question-1").val()
         defnVal = $("#hangul-question-2").val()
         if($.trim(pronunVal) == stats["pronunciation"] && $.trim(defnVal) == stats["definition"]){
-            $("#check-work").append("Correct!")
-            $("#check-work").removeClass("check-work-incorrect")
-            $("#check-work").addClass("check-work-correct")
+            $("#check-work").html("Correct!")
+            $("#check-work").removeClass("alert-danger")
+            $("#check-work").addClass("alert-success")
+            document.getElementById("submit").disabled = true;
+
+            $("#change-state").append("<div class = 'd-flex justify-content-between prev-next'>")
+
+            let prev_id = stats["id"] - 1
+            let curr_id = stats["id"]
+            let next_id = stats["id"] + 1
+
+            if(stats["end"]=="1"){
+                $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
+                $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/vocab'>NEXT →</a></div>")
+            }
+            else if(prev_id == 0){
+                $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
+            }
+            else{
+                $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
+                $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
+            }
         }
         else{
-            $("#check-work").append("Incorrect. Try again.")
-            $("#check-work").removeClass("check-work-correct")
-            $("#check-work").addClass("check-work-incorrect")
+            $("#check-work").html("Incorrect. Try again.")
+            $("#check-work").removeClass("alert-success")
+            $("#check-work").addClass("alert-danger")
         }
     });
-    $("#change-state").append("<div class = 'd-flex justify-content-between prev-next'>")
-
-    let prev_id = stats["id"] - 1
-    let curr_id = stats["id"]
-    let next_id = stats["id"] + 1
-
-    if(stats["end"]=="1"){
-        $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter/1'>NEXT →</a></div>")
-    }
-    else if(prev_id == 0){
-        $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='#'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
-    }
-    else{
-        $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
-    }
 }
 function find_word(info){
     $.ajax({

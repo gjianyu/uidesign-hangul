@@ -194,6 +194,7 @@ syllables = [
 vocabulary = [
     {
         "id": 1,
+        "end": 0,
         "hangul": "가",
         "pronunciation": "ga",
         "definition": "to go",
@@ -203,6 +204,7 @@ vocabulary = [
     },
     {
         "id": 2,
+        "end": 0,
         "hangul": "간",
         "pronunciation": "gan",
         "definition": "liver",
@@ -212,6 +214,7 @@ vocabulary = [
     },
     {
         "id": 3,
+        "end": 0,
         "hangul": "나",
         "pronunciation": "na",
         "definition": "me",
@@ -221,6 +224,7 @@ vocabulary = [
     },
     {
         "id": 4,
+        "end": 0,
         "hangul": "바나나",
         "pronunciation": "banana",
         "definition": "banana",
@@ -230,6 +234,7 @@ vocabulary = [
     },
     {
         "id": 5,
+        "end": 0,
         "hangul": "박사",
         "pronunciation": "baksa",
         "definition": "professor",
@@ -239,6 +244,7 @@ vocabulary = [
     },
     {
         "id": 6,
+        "end": 1,
         "hangul": "산",
         "pronunciation": "san",
         "definition": "mountain",
@@ -354,7 +360,7 @@ def find_word():
     stats = {}
     for x in vocabulary:
         if info ==x["id"]:
-            stats = x  
+            stats = x
     # send back the WHOLE array of data, so the client can redisplay it
     print(stats)
     return jsonify(stats = stats)

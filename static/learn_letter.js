@@ -38,7 +38,7 @@ function show_info(info){
             document.getElementById("submit").disabled = true;
         }
         else{
-            $("#check-work").html("INCORRECT! Try again!")
+            $("#check-work").html("Incorrect. Try again!")
             $("#check-work").removeClass("alert-success")
             $("#check-work").addClass("alert-danger")
         }
