@@ -44,6 +44,18 @@ function droppableHandler(dragged_letter, dropbox_text){
     dropbox_text_dis.push(dragged_letter)
     dropbox_text = Hangul.assemble(dropbox_text_dis)
     $("#drop-box").html(dropbox_text)
+    if(dropbox_text.length === 1) {
+        $("#drop-box").css("font-size", "8em")
+        $("#drop-box").css("padding-top", "0")
+    }
+    if(dropbox_text.length === 2) {
+        $("#drop-box").css("font-size", "4em")
+        $("#drop-box").css("padding-top", "45px")
+    }
+    if(dropbox_text.length === 3) {
+        $("#drop-box").css("font-size", "3em")
+        $("#drop-box").css("padding-top", "55px")
+    }
     return dropbox_text
 }
 

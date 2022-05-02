@@ -20,6 +20,14 @@ function play() {
 
 function show_info(info){
     $("#hangul-character").append(stats["hangul"])
+    if(stats["hangul"].length === 2) {
+        $("#hangul-character").css("font-size", "4em")
+        $("#hangul-character").css("padding-top", "45px")
+    }
+    if(stats["hangul"].length === 3) {
+        $("#hangul-character").css("font-size", "3em")
+        $("#hangul-character").css("padding-top", "55px")
+    }
     $("#hangul-image-div").append("<img id='hangul-image' src ='" + stats["image"] + "'/>")
     $("#hangul-audio").on("click", function() {
         play()
