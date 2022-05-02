@@ -193,7 +193,8 @@ syllables = [
 ]
 vocabulary = [
     {
-        "id": 0,
+        "id": 1,
+        "end": 0,
         "hangul": "가",
         "pronunciation": "ga",
         "definition": "to go",
@@ -202,7 +203,8 @@ vocabulary = [
         "audio": "hangul_audios/7_gah.mp3"
     },
     {
-        "id": 1,
+        "id": 2,
+        "end": 0,
         "hangul": "간",
         "pronunciation": "gan",
         "definition": "liver",
@@ -211,7 +213,8 @@ vocabulary = [
         "audio": "hangul_audios/8_gan.mp3"
     },
     {
-        "id": 2,
+        "id": 3,
+        "end": 0,
         "hangul": "나",
         "pronunciation": "na",
         "definition": "me",
@@ -220,7 +223,8 @@ vocabulary = [
         "audio": "hangul_audios/9_nah.mp3"
     },
     {
-        "id": 3,
+        "id": 4,
+        "end": 0,
         "hangul": "바나나",
         "pronunciation": "banana",
         "definition": "banana",
@@ -229,7 +233,8 @@ vocabulary = [
         "audio": "hangul_audios/19_banana.mp3"
     },
     {
-        "id": 4,
+        "id": 5,
+        "end": 0,
         "hangul": "박사",
         "pronunciation": "baksa",
         "definition": "professor",
@@ -238,7 +243,8 @@ vocabulary = [
         "audio": "hangul_audios/20_baksa.mp3"
     },
     {
-        "id": 5,
+        "id": 6,
+        "end": 1,
         "hangul": "산",
         "pronunciation": "san",
         "definition": "mountain",
@@ -256,6 +262,28 @@ def welcome():
 @app.route('/learn/letter/<int:id>')
 def learn_letter(id):
     return render_template('learn_letter.html', id=id)
+
+@app.route('/begin/letter/')
+def begin_letter():
+    return render_template('begin_letter.html')
+@app.route('/begin/syllable/')
+def begin_syllable():
+    return render_template('begin_syllable.html')
+@app.route('/begin/word/')
+def begin_word():
+    return render_template('begin_word.html')
+
+@app.route('/begin/quiz/letter')
+def begin_quiz_letter():
+    return render_template('begin_quiz_letter.html')
+
+@app.route('/begin/quiz/syllable')
+def begin_quiz_syllable():
+    return render_template('begin_quiz_syllable.html')
+
+@app.route('/begin/quiz/word')
+def begin_quiz_word():
+    return render_template('begin_quiz_word.html')
 
 @app.route('/quiz/class1/letter')
 def quiz_class1_letter():
@@ -354,7 +382,7 @@ def find_word():
     stats = {}
     for x in vocabulary:
         if info ==x["id"]:
-            stats = x  
+            stats = x
     # send back the WHOLE array of data, so the client can redisplay it
     print(stats)
     return jsonify(stats = stats)

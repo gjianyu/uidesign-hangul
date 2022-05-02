@@ -38,18 +38,18 @@ function show_info(info){
             document.getElementById("submit").disabled = true;
         }
         else{
-            $("#check-work").html("INCORRECT! Try again!")
+            $("#check-work").html("Incorrect. Try again!")
             $("#check-work").removeClass("alert-success")
             $("#check-work").addClass("alert-danger")
         }
-      
+
         let isCorrect= document.getElementById("check-work").innerHTML
         console.log(isCorrect)
 
         let prev_id = stats["id"] - 1
         let curr_id = stats["id"]
         let next_id = stats["id"] + 1
-        
+
         if(stats["end"] === "1" && isCorrect === "Correct!"){
             $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
             // $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter'>NEXT →</a></div>")
@@ -59,7 +59,6 @@ function show_info(info){
             $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter'>NEXT →</a></div>")
         }
         else if(prev_id === 0 && isCorrect === "Correct!"){
-            $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='#'>← PREVIOUS</a>")
             $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
         }
         else if(isCorrect === "Correct!"){

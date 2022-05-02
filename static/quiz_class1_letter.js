@@ -15,7 +15,7 @@ function reset_score() {
     score = {"total": 0, "correct": 0}
     $.ajax({
         type: "POST",
-        url: "../../../score",                
+        url: "../../../score",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify("reset"),
@@ -68,14 +68,14 @@ function play() {
 function get_score() {
     $.ajax({
         type: "GET",
-        url: "../../../score",                
+        url: "../../../score",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function(result) {
             score["total"] = result["total"]
             score["correct"] = result["correct"]
             console.log(result)
-            show_score()            
+            show_score()
             console.log("ajax get total:", result["total"])
             console.log("ajax get correct:", result["correct"])
         },
@@ -91,7 +91,7 @@ function get_score() {
 function post_score(search_str) {
     $.ajax({
         type: "POST",
-        url: "../../../score",                
+        url: "../../../score",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(score),
@@ -200,6 +200,7 @@ function show_info(info){
             if (quiz_done) {
                 reset_score()
                 alert("You're ready to do level 2!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/syllable'> NEXT →</a>")
             }
             else {
                 change_state.append("<a class = 'p-3 prev-next-button'  href='../../quiz/class2/letter'> NEXT →</a>")
@@ -220,6 +221,7 @@ function show_info(info){
             if (quiz_done) {
                 reset_score()
                 alert("You're ready to do level 2!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/syllable'> NEXT →</a>")
             }
             else {
                 console.log("10")

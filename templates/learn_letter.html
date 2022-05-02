@@ -1,4 +1,20 @@
 {% extends "learn.html" %}
+
+{% block learn_nav %}
+<div class="row d-flex justify-content-center">
+    <nav aria-label="Learn navigation">
+        <ul id="learn-pagination" class="pagination">
+            <li class="page-item"><a class="page-link learn-link" href="http://127.0.0.1:5000/learn/letter/1">ㄱ</a></li>
+            <li class="page-item"><a class="page-link learn-link" href="http://127.0.0.1:5000/learn/letter/2">ㄴ</a></li>
+            <li class="page-item"><a class="page-link learn-link" href="http://127.0.0.1:5000/learn/letter/3">ㅂ</a></li>
+            <li class="page-item"><a class="page-link learn-link" href="http://127.0.0.1:5000/learn/letter/4">ㅅ</a></li>
+            <li class="page-item"><a class="page-link learn-link" href="http://127.0.0.1:5000/learn/letter/5">ㅎ</a></li>
+            <li class="page-item"><a class="page-link learn-link" href="http://127.0.0.1:5000/learn/letter/6">ㅏ</a></li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}
+
 {% block learn_content %}
 <head>
     <script type="text/javascript" src="{{ url_for('static', filename = 'learn_letter.js') }}"></script>

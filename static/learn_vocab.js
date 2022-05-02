@@ -20,12 +20,17 @@ function play() {
 
 function show_info(info){
     $("#hangul-character").append(stats["hangul"])
-    console.log(stats["hangul"])
-    console.log(stats["hangul"].length)
     if (stats["hangul"].length > 1) {
         // $("#hangul-character").removeClass("hangul-character")
         // $("#hangul-character").addClass("hangul-character-small")
         document.getElementById("hangul-character").style.fontSize = "60px"
+    if(stats["hangul"].length === 2) {
+        $("#hangul-character").css("font-size", "4em")
+        $("#hangul-character").css("padding-top", "45px")
+    }
+    if(stats["hangul"].length === 3) {
+        $("#hangul-character").css("font-size", "3em")
+        $("#hangul-character").css("padding-top", "55px")
     }
     $("#hangul-image-div").append("<img id='hangul-image' src ='" + stats["image"] + "'/>")
     $("#hangul-audio").on("click", function() {
@@ -43,13 +48,31 @@ function show_info(info){
         pronunVal = $("#hangul-question-1").val()
         defnVal = $("#hangul-question-2").val()
         if($.trim(pronunVal) == stats["pronunciation"] && $.trim(defnVal) == stats["definition"]){
-            $("#check-work").append("Correct!")
+            $("#check-work").html("Correct!")
             $("#check-work").removeClass("alert-danger")
             $("#check-work").addClass("alert-success")
             document.getElementById("submit").disabled = true;
+
+            $("#change-state").append("<div class = 'd-flex justify-content-between prev-next'>")
+
+            let prev_id = stats["id"] - 1
+            let curr_id = stats["id"]
+            let next_id = stats["id"] + 1
+
+            if(stats["end"]=="1"){
+                $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
+                $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/vocab'>NEXT →</a></div>")
+            }
+            else if(prev_id == 0){
+                $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
+            }
+            else{
+                $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
+                $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
+            }
         }
         else{
-            $("#check-work").append("Incorrect. Try again.")
+            $("#check-work").html("Incorrect. Try again.")
             $("#check-work").removeClass("alert-success")
             $("#check-work").addClass("alert-danger")
         }
@@ -75,6 +98,7 @@ function show_info(info){
         $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
         $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
     }
+
 }
 function find_word(info){
     $.ajax({

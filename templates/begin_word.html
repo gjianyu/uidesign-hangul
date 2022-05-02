@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="row welcome-row">
+    <div id="welcome-col-1" class="col-6 my-auto">
+        <br><br>
+        <div id="welcome-title">
+            Words
+        </div>
+        <div id="welcome-desc">
+            <br>
+            The goal of this lesson is to learn the basic meaning of
+            <br>
+            <div class="row begin-row">
+                <span class="module-data-number">6</span> words
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <div class="col-6 my-auto">
+        <div id = "begin-desc">
+            A Korean word is always just one or more simple syllables.
+            <br><br>
+            <div class = "example">
+                Example: <b>가</b> means “to go”
+            </div>
+            <div class = "example">
+                Example: <b>바나나</b> means “banana”
+            </div>
+        </div>
+        <div id = "change-state" class="d-flex">
+            <a class = 'p-3 btn prev-next-button' href = '../../learn/vocab/1'>NEXT →</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -3,7 +3,6 @@ body {
     font-size: 18px;
     background-color: #fafafa;
 }
-
 .navbar-custom {
     background-color: #fff;
     color: #111;
@@ -14,6 +13,10 @@ body {
     font-size: 1.2em;
     font-weight: bold;
     color: #549F93!important;
+}
+
+.navbar-brand:hover {
+    color: #F46036!important;
 }
 
 .navbar-custom a {
@@ -29,6 +32,12 @@ body {
     width: 80%;
     max-width: 1800px!important;
     overflow: hidden;
+}
+
+#credits {
+    color: #444;
+    font-size: 0.8em;
+    text-align: center;
 }
 
 /* WELCOME */
@@ -53,16 +62,38 @@ body {
     font-family: 'Josefin Sans', sans serif;
     font-weight: bold;
 }
-
+#example{
+    font-size: 1em;
+}
 #welcome-desc {
     font-size: 1.2em;
 }
-
+#begin-desc {
+    font-size: 1.2em;
+    margin: 10px;
+}
+.begin-row {
+    padding: 10px;
+    font-size: 1.5em;
+}
 .module-row {
     padding: 50px;
     font-size: 1.5em;
 }
-
+.syllable-number{
+    width: 1.5em;
+    height: 1.5em;
+    font-weight: bold;
+    background-color: #F46036;
+    color: #fff;
+    border-radius: 1.5em;
+    padding-left: 13px;
+    margin-right: 15px;
+}
+.syllable-row{
+    font-size: 1em;
+    padding: 5px;
+}
 .module-number {
     width: 1.5em;
     height: 1.5em;
@@ -73,14 +104,38 @@ body {
     padding-left: 13px;
     margin-right: 15px;
 }
-
+.module-data-number{
+    width: 1.5em;
+    height: 1.5em;
+    font-weight: bold;
+    background-color: #F46036;
+    color: #fff;
+    border-radius: 1.5em;
+    padding-left: 15px;
+    padding-top: 2px;
+    margin-right: 15px;
+}
+.module-begin-number{
+    width: 2em;
+    height: 1.5em;
+    font-weight: bold;
+    background-color: #F46036;
+    color: #fff;
+    border-radius: 1.5em;
+    padding-left: 13px;
+    padding-top: 2px;
+    margin-right: 15px;
+}
 .module-link {
     color: #111;
 }
-
 .module-link:hover {
     text-decoration: none;
     color: #F46036;
+}
+#tiger-emoji {
+    font-size: 3em;
+    text-align: right;
 }
 
 /* LEARN/QUIZ */
@@ -103,7 +158,7 @@ body {
 }
 
 .custom-row {
-    margin: 50px;
+    margin: 15px 50px;
     background: linear-gradient(90deg, #549F93 50%, #fff 50%);;
     border-radius: 50px;
 }
@@ -230,7 +285,7 @@ body {
     width: 190px;
     height: 190px;
     font-size: 8em;
-    background-color: #F46036;
+    background-color: #fff;
     border: 5px solid #111;
     border-radius: 30px;
     box-shadow: 3px 3px 5px #444;
@@ -267,4 +322,29 @@ body {
     color: #fff;
 }
 
-/* LEARN VOCAB UI */
+/* SCORE UI */
+#score_bar {
+    margin-bottom: 20px;
+}
+#score {
+    text-align: center;
+}
+#percent {
+    text-align: center;
+}
+
+/* TESTING: PAGINATION UI */
+.page-link {
+    font-size: 1.2em;
+    background-color: #fff!important;
+    color: #111!important;
+}
+
+.learn-link {
+    font-weight: bold;
+}
+
+.learn-link:hover {
+    background-color: #F46036!important;
+    color: #fff!important;
+}

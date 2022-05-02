@@ -1,5 +1,16 @@
 {% extends "quiz.html" %}
 
+{% block quiz_nav %}
+<div class="row d-flex justify-content-center">
+  <nav aria-label="Quiz scores">
+    <ul id="score-list" class="pagination">
+      <li class="page-item"><a class="page-link"><div id="score"></div></a></li>
+      <li class="page-item"><a class="page-link"><div id="percent"></div></a></li>
+    </ul>
+  </nav>
+</div>
+{% endblock %}
+
 {% block quiz_content %}
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_class1_vocab.js') }}"></script>
@@ -14,7 +25,7 @@
   </div>
 </div>
 <div class="col-6 my-auto hangul-col">
-  <div id="check-work"></div>
+  <div id="check-work" class="alert"></div>
   <div id="vocab-desc" class="text-center">
     Drag the letters to the box to construct the word you hear when you click on the audio button.
   </div>

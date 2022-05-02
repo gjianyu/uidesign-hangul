@@ -5,7 +5,7 @@ $(document).ready(function() {})
 function reset_score() {
     $.ajax({
         type: "POST",
-        url: "../../../score",                
+        url: "../../../score",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify("result"),
@@ -26,7 +26,7 @@ function reset_score() {
 function get_score() {
     $.ajax({
         type: "GET",
-        url: "../../../score",                
+        url: "../../../score",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function(result) {
@@ -47,7 +47,7 @@ function get_score() {
 function post_score(search_str) {
     $.ajax({
         type: "POST",
-        url: "../../../score",                
+        url: "../../../score",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(score),
@@ -118,7 +118,7 @@ function show_info(info){
     get_score()
     $("#change-state").empty()
     console.log("showing score:", score)
-    
+
     $("#quiz-hangul").html(letter.hangul)
     console.log(letter)
     $(".question").append("<p>How do you pronounce " + letter.hangul + "?</p>")
@@ -149,6 +149,7 @@ function show_info(info){
             if (quiz_done) {
                 reset_score()
                 alert("You're ready to do level 2!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/syllable'> NEXT →</a>")
             }
             else {
                 $("#change-state").append("<a class = 'p-3 prev-next-button'  href='../../quiz/class1/letter'> NEXT →</a>")
@@ -172,6 +173,7 @@ function show_info(info){
             if (quiz_done) {
                 reset_score()
                 alert("You're ready to do level 2!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/syllable'> NEXT →</a>")
             }
             else {
                 $("#change-state").append("<a class = 'p-3 prev-next-button'  href='../../quiz/class1/letter'> NEXT →</a>")

@@ -1,5 +1,16 @@
 {% extends "quiz.html" %}
 
+{% block quiz_nav %}
+<div class="row d-flex justify-content-center">
+  <nav aria-label="Quiz scores">
+    <ul id="score-list" class="pagination">
+      <li class="page-item"><a class="page-link"><div id="score"></div></a></li>
+      <li class="page-item"><a class="page-link"><div id="percent"></div></a></li>
+    </ul>
+  </nav>
+</div>
+{% endblock %}
+
 {% block quiz_content %}
 <head>
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_class2_letter.js') }}"></script>
@@ -19,16 +30,10 @@
   </div>
 </div>
 <div class="col-6 my-auto hangul-col">
-    <div id = "input-feedback">
+    <div id = "input-feedback" class="alert">
     </div>
   <form class="form">
     <div class="form-row">
-      <div id="score_bar">
-        <div id="score">
-        </div>
-        <div id="percent">
-        </div>
-      </div>
       <div class="col question">
       </div>
     </div>

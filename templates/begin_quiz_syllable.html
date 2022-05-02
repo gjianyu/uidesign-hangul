@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="row welcome-row">
+    <div id="welcome-col-1" class="col-6 my-auto">
+        <br><br>
+        <div id="welcome-title">
+            Syllable Quiz
+        </div>
+        <div id="welcome-desc">
+            It's time to test your knowledge of these <b>twelve</b> Korean syllables!
+            <br><br>
+            To pass this quiz, you will need a score of
+            <div class="row begin-row">
+                <span class="module-begin-number">85</span>percent.
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <div class="col-6 my-auto">
+        <div id = "begin-desc">
+            In this quiz, you will answer questions until you reach the passing grade of <b>85%</b>.
+            <br><br>
+            Make sure to turn on your audio, and let's get started!
+        </div>
+        <div id = "change-state" class="d-flex">
+            <a class = 'p-3 btn prev-next-button' href = '../../quiz/syllable'>NEXT →</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

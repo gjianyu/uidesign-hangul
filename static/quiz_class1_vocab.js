@@ -11,8 +11,6 @@ let letters = [
 function check_overspill() {
     word = vocab.hangul
     if (word.length > 1) {
-        let hangul_vocab = document.getElementById("hangul-character")
-        hangul_vocab.style.fontSize = "4em"
         let dropbox = document.getElementById("drop-box")
         dropbox.style.fontSize = "2em"
     }
@@ -40,6 +38,7 @@ function clear() {
         dropbox_text = ""
         $("#drop-box").html(dropbox_text)
         $("#check-work").empty()
+        $("#check-work").removeClass("alert-danger")
     })
 }
 
@@ -49,9 +48,11 @@ function submit() {
             $("#check-work").html("Correct!")
             $("#check-work").removeClass("alert-danger")
             $("#check-work").addClass("alert-success")
+            document.getElementById("submit_button").disabled = true;
+            document.getElementById("clear_button").disabled = true;
         }
         else {
-            $("#check-work").html("INCORRECT! Try again!")
+            $("#check-work").html("Incorrect.Try again!")
             $("#check-work").removeClass("alert-success")
             $("#check-work").addClass("alert-danger")
         }
@@ -82,7 +83,7 @@ function draggableTablePopulate(){
                 revertDuration: 0
             })
         })
-        
+
         if (value in ["ㄱ", "ㄴ", "ㅂ"]) {
             $("#first_row_of_drag_table").append(new_letter)
         }
@@ -95,6 +96,7 @@ function draggableTablePopulate(){
 $(document).ready(function(){
     draggableTablePopulate()
     dropboxDroppable()
+    check_overspill()
     clear()
     submit()
 })
