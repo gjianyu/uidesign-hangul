@@ -250,7 +250,7 @@ vocabulary = [
         "definition": "mountain",
         "image": "",
         "audio_id": 15,
-        "audio": "hangul_audios/14_san.mp3"
+        "audio": "hangul_audios/15_san.mp3"
     }
 ]
 
