@@ -39,9 +39,16 @@ function play(x) {
 }
 
 function droppableHandler(dragged_letter, dropbox_text){
+    console.log("droppabel")
     $("#drop-box").empty()
     let dropbox_text_dis = Hangul.disassemble(dropbox_text)
     dropbox_text_dis.push(dragged_letter)
+    if (Hangul.assemble(dropbox_text_dis).length >= 2) {
+        console.log("letters spilled over")
+        alert("The characters you just attempted to assemble are not correct. Try putting a vowel after a consonant!")
+        return dropbox_text
+    }
+    // dropbox_text_dis.push(dragged_letter)
     dropbox_text = Hangul.assemble(dropbox_text_dis)
     $("#drop-box").html(dropbox_text)
     return dropbox_text
@@ -52,6 +59,8 @@ function clear() {
         dropbox_text = ""
         $("#drop-box").html(dropbox_text)
         $("#check-work").empty()
+        $("#check-work").removeClass("alert-success")
+        $("#check-work").removeClass("alert-danger")
     })
 }
 
@@ -64,6 +73,8 @@ function submit() {
             document.getElementById("clear_button").disabled = true;
             document.getElementById("submit_button").disabled = true;
             loadPages()
+            document.getElementById("submit").disabled = true;
+            // loadPages()
         }
         else {
             $("#check-work").html("INCORRECT! Try again!")
@@ -115,6 +126,10 @@ function loadPages() {
     if(next_id === syllable.length){
         $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='127.0.0.1:5000/learn/letter"+ prev_id +"'>← PREVIOUS</a>")
         $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter/1'>NEXT →</a></div>")
+    }
+    else if(id == 12){
+        $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='#'>← PREVIOUS</a>")
+        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + 12+"'>NEXT →</a></div>")
     }
     else if(prev_id == 0){
         $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='#'>← PREVIOUS</a>")

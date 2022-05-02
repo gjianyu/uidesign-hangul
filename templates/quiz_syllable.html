@@ -2,7 +2,7 @@
 
 {% block quiz_content %}
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'learn_syllable.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz_syllable.js') }}"></script>
 
 <script>
   let syllable = {{syllable|tojson}}
@@ -34,6 +34,8 @@
 
       </div>
     </div>
+  </div>
+  <div id = "change-state" class="d-flex">
   </div>
 </div>
 {% endblock %}

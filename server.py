@@ -193,7 +193,7 @@ syllables = [
 ]
 vocabulary = [
     {
-        "id": 1,
+        "id": 0,
         "hangul": "가",
         "pronunciation": "ga",
         "definition": "to go",
@@ -202,7 +202,7 @@ vocabulary = [
         "audio": "hangul_audios/7_gah.mp3"
     },
     {
-        "id": 2,
+        "id": 1,
         "hangul": "간",
         "pronunciation": "gan",
         "definition": "liver",
@@ -211,7 +211,7 @@ vocabulary = [
         "audio": "hangul_audios/8_gan.mp3"
     },
     {
-        "id": 3,
+        "id": 2,
         "hangul": "나",
         "pronunciation": "na",
         "definition": "me",
@@ -220,7 +220,7 @@ vocabulary = [
         "audio": "hangul_audios/9_nah.mp3"
     },
     {
-        "id": 4,
+        "id": 3,
         "hangul": "바나나",
         "pronunciation": "banana",
         "definition": "banana",
@@ -229,7 +229,7 @@ vocabulary = [
         "audio": "hangul_audios/19_banana.mp3"
     },
     {
-        "id": 5,
+        "id": 4,
         "hangul": "박사",
         "pronunciation": "baksa",
         "definition": "professor",
@@ -238,13 +238,13 @@ vocabulary = [
         "audio": "hangul_audios/20_baksa.mp3"
     },
     {
-        "id": 6,
+        "id": 5,
         "hangul": "산",
         "pronunciation": "san",
         "definition": "mountain",
         "image": "",
         "audio_id": 15,
-        "audio": "hangul_audios/14_san.mp3"
+        "audio": "hangul_audios/15_san.mp3"
     }
 ]
 

@@ -52,6 +52,10 @@ function show_info(info){
         
         if(stats["end"] === "1" && isCorrect === "Correct!"){
             $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
+            // $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter'>NEXT →</a></div>")
+        }
+        else if(stats["hangul"] === "ㄱ" && isCorrect === "Correct!"){
+            // $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
             $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/letter'>NEXT →</a></div>")
         }
         else if(prev_id === 0 && isCorrect === "Correct!"){

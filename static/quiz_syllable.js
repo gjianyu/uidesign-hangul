@@ -12,22 +12,16 @@ function play(x) {
     let audio_path = "http://127.0.0.1:8080/"
     switch(x) {
         case "ㄱ":
-            audio_path += "hangul_audios/1_g.mp3"
             break;
         case "ㄴ":
-            audio_path += "hangul_audios/2_n.mp3"
             break;
         case "ㅂ":
-            audio_path += "hangul_audios/3_b.mp3"
             break;
         case "ㅅ":
-            audio_path += "hangul_audios/4_s.mp3"
             break;
         case "ㅎ":
-            audio_path += "hangul_audios/5_h.mp3"
             break;
         case "ㅏ":
-            audio_path += "hangul_audios/6_ah.mp3"
             break;
         default:
             audio_path += syllable.audio
@@ -57,15 +51,22 @@ function clear() {
 
 function submit() {
     $("#submit_button").click(function() {
+        // console.log("hi!")
         if (dropbox_text == syllable.hangul) {
             $("#check-work").html("Correct!")
-            $("#check-work").removeClass("check-work-incorrect")
-            $("#check-work").addClass("check-work-correct")
+
+            $("#check-work").removeClass("alert-danger")
+            $("#check-work").addClass("alert-success")
+
+            // $("#change-state").html("!!")
+            $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/syllable'>NEXT →</a></div>")
+            document.getElementById("submit").disabled = true;
+
         }
         else {
             $("#check-work").html("INCORRECT! Try again!")
-            $("#check-work").removeClass("check-work-correct")
-            $("#check-work").addClass("check-work-incorrect")
+            $("#check-work").removeClass("alert-success")
+            $("#check-work").addClass("alert-danger")
         }
     })
 }
@@ -108,4 +109,5 @@ $(document).ready(function(){
     draggableTablePopulate()
     dropboxDroppable()
     clear()
+    submit()
 })
