@@ -34,6 +34,12 @@ body {
     overflow: hidden;
 }
 
+#credits {
+    color: #444;
+    font-size: 0.8em;
+    text-align: center;
+}
+
 /* WELCOME */
 
 .welcome-row {
@@ -152,7 +158,7 @@ body {
 }
 
 .custom-row {
-    margin: 50px 50px 15px 50px;
+    margin: 15px 50px;
     background: linear-gradient(90deg, #549F93 50%, #fff 50%);;
     border-radius: 50px;
 }
@@ -303,6 +309,9 @@ body {
 }
 
 /* SCORE UI */
+#score_bar {
+    margin-bottom: 20px;
+}
 #score {
     text-align: center;
 }
@@ -313,12 +322,15 @@ body {
 /* TESTING: PAGINATION UI */
 .page-link {
     font-size: 1.2em;
-    font-weight: bold;
     background-color: #fff!important;
     color: #111!important;
 }
 
-.page-link:hover {
+.learn-link {
+    font-weight: bold;
+}
+
+.learn-link:hover {
     background-color: #F46036!important;
     color: #fff!important;
 }
