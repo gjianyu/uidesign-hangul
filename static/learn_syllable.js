@@ -46,6 +46,11 @@ function droppableHandler(dragged_letter, dropbox_text){
     if (Hangul.assemble(dropbox_text_dis).length >= 2) {
         console.log("letters spilled over")
         alert("The characters you just attempted to assemble are not correct. Try putting a vowel after a consonant!")
+        dropbox_text = ""
+        $("#drop-box").html(dropbox_text)
+        $("#check-work").empty()
+        $("#check-work").removeClass("alert-success")
+        $("#check-work").removeClass("alert-danger")
         return dropbox_text
     }
     // dropbox_text_dis.push(dragged_letter)

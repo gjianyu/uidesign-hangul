@@ -44,6 +44,8 @@ function droppableHandler(dragged_letter, dropbox_text){
 function clear() {
     $("#clear_button").click(function() {
         dropbox_text = ""
+        $("#check-work").removeClass("alert-danger")
+        $("#check-work").removeClass("alert-success")
         $("#drop-box").html(dropbox_text)
         $("#check-work").empty()
     })

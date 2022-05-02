@@ -24,6 +24,7 @@ function show_info(info){
         // $("#hangul-character").removeClass("hangul-character")
         // $("#hangul-character").addClass("hangul-character-small")
         document.getElementById("hangul-character").style.fontSize = "60px"
+    }
     if(stats["hangul"].length === 2) {
         $("#hangul-character").css("font-size", "4em")
         $("#hangul-character").css("padding-top", "45px")
@@ -61,7 +62,7 @@ function show_info(info){
 
             if(stats["end"]=="1"){
                 $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
-                $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/vocab'>NEXT →</a></div>")
+                // $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/vocab'>NEXT →</a></div>")
             }
             else if(prev_id == 0){
                 $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
@@ -77,29 +78,30 @@ function show_info(info){
             $("#check-work").addClass("alert-danger")
         }
     });
-    $("#change-state").append("<div class = 'd-flex justify-content-between prev-next'>")
+    // $("#change-state").append("<div class = 'd-flex justify-content-between prev-next'>")
 
-    let prev_id = stats["id"] - 1
-    let curr_id = stats["id"]
-    let next_id = stats["id"] + 1
+    // let prev_id = stats["id"] - 1
+    // let curr_id = stats["id"]
+    // let next_id = stats["id"] + 1
 
-    if(stats["id"] == 0){
-        console.log("case3")
-        $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='#'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
-    }
-    else if(stats["id"] == 5){
-        console.log("case2")
-        $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='#'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + 5+"'>NEXT →</a></div>")
-    }
-    else{
-        console.log("case1")
-        $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
-    }
+    // if(stats["id"] == 0){
+    //     console.log("case3")
+    //     $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='#'>← PREVIOUS</a>")
+    //     $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
+    // }
+    // else if(stats["id"] == 5){
+    //     console.log("case2")
+    //     $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='#'>← PREVIOUS</a>")
+    //     $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + 5+"'>NEXT →</a></div>")
+    // }
+    // else{
+    //     console.log("case1")
+    //     $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+prev_id +"'>← PREVIOUS</a>")
+    //     $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '"+ next_id+"'>NEXT →</a></div>")
+    // }
 
 }
+
 function find_word(info){
     $.ajax({
         type: "POST",
