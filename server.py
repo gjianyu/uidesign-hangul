@@ -87,7 +87,7 @@ syllables = [
         "hangul": "가",
         "pronunciation": "gah",
         "definition": "to go",
-        "image": "",
+        "image": "https://thumbs.dreamstime.com/b/cartoon-illustration-construction-worker-frowning-expression-holding-go-traffic-sign-cartoon-construction-worker-135307416.jpg",
         "audio_id": 7,
         "audio": "hangul_audios/7_gah.mp3"
     },
@@ -96,7 +96,7 @@ syllables = [
         "hangul": "간",
         "pronunciation": "gan",
         "definition": "liver",
-        "image": "",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsqt_uK5PrpjdMss_oody-1hUGqnhvgCnQihM53toQtMVDml9ryiLaALmWhDkkylq9LSk&usqp=CAU",
         "audio_id": 8,
         "audio": "hangul_audios/8_gan.mp3"
     },
@@ -105,7 +105,7 @@ syllables = [
         "hangul": "나",
         "pronunciation": "nah",
         "definition": "me",
-        "image": "",
+        "image": "https://st2.depositphotos.com/12398928/43749/v/380/depositphotos_437490474-stock-illustration-teen-standing-pointing-thumbs-himself.jpg?forcejpeg=true",
         "audio_id": 9,
         "audio": "hangul_audios/9_nah.mp3"
     },
@@ -113,8 +113,8 @@ syllables = [
         "id": 4,
         "hangul": "난",
         "pronunciation": "nan",
-        "definition": "I am... (in shortened form)",
-        "image": "",
+        "definition": "I am...",
+        "image": "https://us.123rf.com/450wm/lisitsaimage/lisitsaimage2102/lisitsaimage210200010/163519446-smiling-african-american-girl-greeting-waving-hand-and-saying-hi.jpg?ver=6",
         "audio_id": 10,
         "audio": "hangul_audios/10_nan.mp3"
     },
@@ -122,7 +122,7 @@ syllables = [
         "id": 5,
         "hangul": "바",
         "pronunciation": "bah",
-        "definition": "NO_MEANING",
+        "definition": "no meaning",
         "image": "",
         "audio_id": 11,
         "audio": "hangul_audios/11_bah.mp3"
@@ -132,7 +132,7 @@ syllables = [
         "hangul": "밥",
         "pronunciation": "bab",
         "definition": "rice, or food",
-        "image": "",
+        "image": "https://as1.ftcdn.net/v2/jpg/03/75/98/72/1000_F_375987209_FbtkdGUITnBb8ILZm3jWWHWgm5PRCEGI.jpg",
         "audio_id": 12,
         "audio": "hangul_audios/12_bab.mp3"
     },
@@ -141,7 +141,7 @@ syllables = [
         "hangul": "반",
         "pronunciation": "ban",
         "definition": "class, or half",
-        "image": "",
+        "image": "https://thumbs.dreamstime.com/b/pupils-teacher-classroom-school-pedagogue-teach-geography-lesson-map-globe-to-pupil-kids-character-schools-lessons-124097623.jpg",
         "audio_id": 13,
         "audio": "hangul_audios/13_ban.mp3"
     },
@@ -150,7 +150,7 @@ syllables = [
         "hangul": "사",
         "pronunciation": "sah",
         "definition": "to buy",
-        "image": "",
+        "image": "https://previews.123rf.com/images/stockgiu/stockgiu1907/stockgiu190732904/127134774-hand-with-money-cartoon.jpg",
         "audio_id": 14,
         "audio": "hangul_audios/14_sah.mp3"
     },
@@ -159,7 +159,7 @@ syllables = [
         "hangul": "산",
         "pronunciation": "san",
         "definition": "mountain",
-        "image": "",
+        "image": "https://i.pinimg.com/originals/fd/09/f7/fd09f7c5093408bcdd7510347301920f.png",
         "audio_id": 15,
         "audio": "hangul_audios/15_san.mp3"
     },
@@ -168,7 +168,7 @@ syllables = [
         "hangul": "삽",
         "pronunciation": "sap",
         "definition": "shovel",
-        "image": "",
+        "image": "https://cdn4.iconfinder.com/data/icons/building-cartoon/512/g18938-512.png",
         "audio_id": 16,
         "audio": "hangul_audios/16_sap.mp3"
     },
@@ -176,7 +176,7 @@ syllables = [
         "id": 11,
         "hangul": "하",
         "pronunciation": "ha",
-        "definition": "NO_MEANING",
+        "definition": "no meaning",
         "image": "",
         "audio_id": 17,
         "audio": "hangul_audios/17_ha.mp3"
@@ -186,7 +186,7 @@ syllables = [
         "hangul": "한",
         "pronunciation": "han",
         "definition": "an internalized feeling of anger, sorrow and resentment stemming from centuries of oppression and suffering, in a way that is uniquely Korean",
-        "image": "",
+        "image": "https://adaa.org/sites/default/files/2021-05/Sad%20child%20purchased%20iStock%20small.jpg",
         "audio_id": 18,
         "audio": "hangul_audios/18_han.mp3"
     }
@@ -198,7 +198,7 @@ vocabulary = [
         "hangul": "가",
         "pronunciation": "ga",
         "definition": "to go",
-        "image": "",
+        "image": "https://thumbs.dreamstime.com/b/cartoon-illustration-construction-worker-frowning-expression-holding-go-traffic-sign-cartoon-construction-worker-135307416.jpg",
         "audio_id": 7,
         "audio": "hangul_audios/7_gah.mp3"
     },
@@ -208,7 +208,7 @@ vocabulary = [
         "hangul": "간",
         "pronunciation": "gan",
         "definition": "liver",
-        "image": "",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsqt_uK5PrpjdMss_oody-1hUGqnhvgCnQihM53toQtMVDml9ryiLaALmWhDkkylq9LSk&usqp=CAU",
         "audio_id": 8,
         "audio": "hangul_audios/8_gan.mp3"
     },
@@ -218,7 +218,7 @@ vocabulary = [
         "hangul": "나",
         "pronunciation": "na",
         "definition": "me",
-        "image": "",
+        "image": "https://st2.depositphotos.com/12398928/43749/v/380/depositphotos_437490474-stock-illustration-teen-standing-pointing-thumbs-himself.jpg?forcejpeg=true",
         "audio_id": 9,
         "audio": "hangul_audios/9_nah.mp3"
     },
@@ -228,7 +228,7 @@ vocabulary = [
         "hangul": "바나나",
         "pronunciation": "banana",
         "definition": "banana",
-        "image": "",
+        "image": "https://static.vecteezy.com/system/resources/previews/004/557/618/original/fruit-banana-cartoon-object-vector.jpg",
         "audio_id": 19,
         "audio": "hangul_audios/19_banana.mp3"
     },
@@ -238,7 +238,7 @@ vocabulary = [
         "hangul": "박사",
         "pronunciation": "baksa",
         "definition": "professor",
-        "image": "",
+        "image": "https://static.vecteezy.com/system/resources/previews/004/903/201/original/cartoon-illustration-of-thai-female-teacher-holding-a-stick-in-front-of-blackboard-vector.jpg",
         "audio_id": 20,
         "audio": "hangul_audios/20_baksa.mp3"
     },
@@ -248,7 +248,7 @@ vocabulary = [
         "hangul": "산",
         "pronunciation": "san",
         "definition": "mountain",
-        "image": "",
+        "image": "https://i.pinimg.com/originals/fd/09/f7/fd09f7c5093408bcdd7510347301920f.png",
         "audio_id": 15,
         "audio": "hangul_audios/15_san.mp3"
     }

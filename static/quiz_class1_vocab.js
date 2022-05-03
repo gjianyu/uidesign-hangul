@@ -158,7 +158,7 @@ function submit() {
         let change_state = $("#change-state")
         var quiz_done = false
         if (dropbox_text == vocab.hangul) {
-            
+
 
             check_work.empty()
             change_state.empty()
@@ -183,9 +183,8 @@ function submit() {
                 reset_score()
                 document.getElementById("submit_button").disabled = true
                 document.getElementById("clear_button").disabled = true
-                alert("You're ready to do level 2!")
-
-                // change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/syllable'> NEXT →</a>")
+                alert("Congratulations! You've learned Hangul!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../'> BACK TO HOME →</a>")
             }
             else {
                 change_state.append("<a class = 'p-3 prev-next-button'  href='../../quiz/class1/vocab'> NEXT →</a>")

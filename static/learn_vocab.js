@@ -62,7 +62,7 @@ function show_info(info){
 
             if(stats["end"]=="1"){
                 $("#change-state").append("<a class = 'p-3 mr-auto btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
-                // $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/class1/vocab'>NEXT →</a></div>")
+                $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../begin/quiz/word'>TAKE QUIZ →</a></div>")
             }
             else if(prev_id == 0){
                 $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")

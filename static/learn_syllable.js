@@ -142,7 +142,7 @@ function loadPages() {
 
     if(curr_id == 12){
         $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='"+ prev_id +"'>← PREVIOUS</a>")
-        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../quiz/syllable'>NEXT →</a></div>")
+        $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../begin/quiz/syllable'>TAKE QUIZ →</a></div>")
     }
     else if(id == 12){
         $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button' href='#'>← PREVIOUS</a>")

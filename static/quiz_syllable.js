@@ -230,8 +230,8 @@ function submit() {
             $("#check-work").addClass("alert-danger")
             if (quiz_done) {
                 reset_score()
-                alert("You're ready to do level 2!")
-                // change_state.append("<a class = 'p-3 prev-next-button'  href='../../learn/syllable'> NEXT →</a>")
+                alert("You're ready to do level 3!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../learn/syllable'> NEXT CLASS →</a>")
             }
             else {
                 console.log("10")
@@ -292,4 +292,3 @@ $(document).ready(function(){
     submit()
 
 })
-
