@@ -144,7 +144,6 @@ function show_info(info){
     console.log("out of get_score total:", score["total"])
     console.log("out of get_score correct:", score["correct"])
     console.log(score)
-    // show_score()
 
     let options = $("#options")
     let first_row = $("<div class = 'row'>")
