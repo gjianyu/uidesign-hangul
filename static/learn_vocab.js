@@ -65,6 +65,7 @@ function show_info(info){
                 $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '../../begin/quiz/word'>TAKE QUIZ →</a></div>")
             }
             else if(prev_id == 0){
+                $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button disabled'>← PREVIOUS</a>")
                 $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
             }
             else{

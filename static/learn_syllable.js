@@ -39,7 +39,7 @@ function play(x) {
 }
 
 function droppableHandler(dragged_letter, dropbox_text){
-    console.log("droppabel")
+    console.log("droppable")
     $("#drop-box").empty()
     let dropbox_text_dis = Hangul.disassemble(dropbox_text)
     dropbox_text_dis.push(dragged_letter)
@@ -149,6 +149,7 @@ function loadPages() {
         $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + 12+"'>NEXT →</a></div>")
     }
     else if(prev_id == 0){
+        $("#change-state").append("<a class = 'mr-auto p-3 btn prev-next-button disabled'>← PREVIOUS</a>")
         $("#change-state").append("<a class = 'p-3 btn prev-next-button' href = '" + next_id+"'>NEXT →</a></div>")
     }
     else{
