@@ -221,7 +221,10 @@ function submit() {
             $("#check-work").addClass("alert-danger")
             if (quiz_done) {
                 reset_score()
-                alert("You're ready to do level 2!")
+                document.getElementById("submit_button").disabled = true
+                document.getElementById("clear_button").disabled = true
+                alert("Congratulations! You've learned Hangul!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../'> BACK TO HOME →</a>")
                 // change_state.append("<a class = 'p-3 prev-next-button'  href='../../learn/syllable'> NEXT →</a>")
             }
             else {

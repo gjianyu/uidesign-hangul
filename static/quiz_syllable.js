@@ -191,9 +191,8 @@ function submit() {
                 reset_score()
                 document.getElementById("submit_button").disabled = true
                 document.getElementById("clear_button").disabled = true
-                alert("You're ready to do level 2!")
-
-                // change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/syllable'> NEXT →</a>")
+                alert("You're ready to do level 3!")
+                change_state.append("<a class = 'p-3 prev-next-button'  href='../../begin/word'> NEXT →</a>")
             }
             else {
                 change_state.append("<a class = 'p-3 prev-next-button'  href='../../quiz/syllable'> NEXT →</a>")
